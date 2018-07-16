@@ -2,7 +2,7 @@ import React from 'react';
 import FluidImage from '../components/FluidImage';
 import styled, { injectGlobal } from 'react-emotion';
 
-import './CardLayout.css'; // Default Gatsby CSS
+import './global.css'; // Default Gatsby CSS
 
 injectGlobal`
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Playfair+Display:700');

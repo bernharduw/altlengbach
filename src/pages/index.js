@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import CardLayout from '../components/CardLayout';
+import Layout from '../components/Layout';
 
 const IndexPage = ({ data }) => (
-  <CardLayout
+  <Layout
     title="Landsitz"
     file={data.image}
     navigation={<Link to="/page-2/">Tour starten</Link>}
@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => (
     <p>
       In Altlengbach, an einer ruhigen Nebenstraße, steht ein Haus zum Verkauf.
     </p>
-  </CardLayout>
+  </Layout>
 );
 
 export default IndexPage;

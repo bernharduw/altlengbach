@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import CardLayout from '../components/CardLayout';
+import Layout from '../components/Layout';
 
 const Balkon = ({ data }) => (
-  <CardLayout
+  <Layout
     title="Balkon"
     alt="Balkon"
     file={data.image}
@@ -16,7 +16,7 @@ const Balkon = ({ data }) => (
   >
     <h1>Der Balkon</h1>
     <p>Natur genießen.</p>
-  </CardLayout>
+  </Layout>
 );
 
 export default Balkon;
