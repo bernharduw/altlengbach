@@ -1,6 +1,20 @@
 import React from 'react';
 import FluidImage from '../components/FluidImage';
-import styled from 'react-emotion';
+import styled, { injectGlobal } from 'react-emotion';
+
+import './CardLayout.css'; // Default Gatsby CSS
+
+injectGlobal`
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Playfair+Display:700');
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+`;
 
 const Page = styled('div')`
   display: flex;
