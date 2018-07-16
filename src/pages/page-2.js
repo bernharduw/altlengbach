@@ -1,14 +1,30 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import Layout from '../components/layout';
+import CardLayout from '../components/CardLayout';
 
-const SecondPage = () => (
-  <Layout>
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
+const Balkon = ({ data }) => (
+  <CardLayout
+    title="Balkon"
+    alt="Balkon"
+    file={data.image}
+    navigation={
+      <>
+        <Link to="/">Go back to the homepage</Link>
+      </>
+    }
+  >
+    <h1>Der Balkon</h1>
+    <p>Natur genießen.</p>
+  </CardLayout>
 );
 
-export default SecondPage;
+export default Balkon;
+
+export const query = graphql`
+  query {
+    image: file(name: { eq: "balkon-sw" }) {
+      ...ImageFragment
+    }
+  }
+`;
