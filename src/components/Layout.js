@@ -116,7 +116,7 @@ const Nav = styled('div')`
 `;
 
 export const Link = styled(GatsbyLink)`
-  display: block;
+  display: inline-block;
 
   ${padding};
   @media (min-height: 480px) and (orientation: landscape) {
