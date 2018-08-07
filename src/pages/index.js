@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import Layout from '../components/Layout';
+import Layout, { Link } from '../components/Layout';
+import FluidImage from '../components/FluidImage';
 
 const IndexPage = ({ data }) => (
   <Layout
-    title="Landsitz"
-    file={data.image}
+    image={<FluidImage title="Landsitz" alt="Landsitz" file={data.image} />}
     navigation={<Link to="/page-2/">Tour starten</Link>}
   >
     <h1>Ein charmanter Landsitz im Wienerwald</h1>

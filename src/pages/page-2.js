@@ -1,16 +1,18 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import Layout from '../components/Layout';
+import Layout, { Link } from '../components/Layout';
+import FluidImage from '../components/FluidImage';
 
 const Balkon = ({ data }) => (
   <Layout
-    title="Balkon"
-    alt="Balkon"
-    file={data.image}
+    image={
+      <FluidImage title="Aussicht vom Balkon" alt="Balkon" file={data.image} />
+    }
     navigation={
       <>
-        <Link to="/">Go back to the homepage</Link>
+        <Link to="/">&laquo;</Link>
+        <Link to="/">Wohnzimmer</Link>
       </>
     }
   >
