@@ -17,7 +17,8 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-emotion": "^9.2.6",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "serve": "^9.4.0"
   },
   "keywords": [
     "gatsby"
@@ -25,6 +26,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "start": "serve public/",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
