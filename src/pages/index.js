@@ -7,7 +7,7 @@ import FluidImage from '../components/FluidImage';
 const IndexPage = ({ data }) => (
   <Layout
     image={<FluidImage title="Landsitz" alt="Landsitz" file={data.image} />}
-    navigation={<Link to="/page-2/">Tour starten</Link>}
+    navigation={<Link to="/balkon-ausblick">Tour starten</Link>}
   >
     <h1>Ein charmanter Landsitz im Wienerwald</h1>
     <p>
