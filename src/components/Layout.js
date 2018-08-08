@@ -6,13 +6,13 @@ import './globalStyle';
 injectGlobal`
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Playfair+Display:700');
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   html {
-    font-size: 87.5%;
+    font-size: 100%;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1281px) {
   html {
     font-size: 150%;
   }
@@ -33,12 +33,8 @@ const padding = css`
   padding: 16px;
 
   @media (min-width: 960px) {
-    :first-of-type {
-      padding-left: 3em;
-    }
-    :last-of-type {
-      padding-right: 3em;
-    }
+    padding-left: 3em;
+    padding-right: 3em;
   }
 `;
 
@@ -107,11 +103,14 @@ const Contact = styled('div')`
   ${goldenRatio};
   background-color: #8f9e77;
   color: #fff;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Nav = styled('div')`
   flex: 1;
   display: flex;
+  justify-content: space-between;
   background-color: darkolivegreen;
 `;
 
