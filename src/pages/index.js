@@ -1,23 +1,35 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout, { Link } from '../components/Layout';
+import Layout, {
+  Article,
+  TextSection,
+  ImageSection,
+  NavBar,
+  NavItem,
+} from '../components/Layout';
 import FluidImage from '../components/FluidImage';
 
 const IndexPage = ({ data }) => (
-  <Layout
-    image={<FluidImage title="Landsitz" alt="Landsitz" file={data.image} />}
-    navigation={
-      <>
-        <div />
-        <Link to="/balkon-ausblick">Tour starten</Link>
-      </>
-    }
-  >
-    <h1>Ein charmanter Landsitz im Wienerwald</h1>
-    <p>
-      In Altlengbach, an einer ruhigen Nebenstraße, steht ein Haus zum Verkauf.
-    </p>
+  <Layout>
+    <Article>
+      <TextSection>
+        <h1>Ein charmanter Landsitz im Wienerwald</h1>
+        <p>
+          In Altlengbach, an einer ruhigen Nebenstraße, steht ein Haus zum
+          Verkauf.
+        </p>
+      </TextSection>
+
+      <ImageSection>
+        <FluidImage title="Landsitz" alt="Landsitz" file={data.image} />
+      </ImageSection>
+    </Article>
+
+    <NavBar>
+      <NavItem />
+      <NavItem to="/tour/balkon">Tour starten</NavItem>
+    </NavBar>
   </Layout>
 );
 

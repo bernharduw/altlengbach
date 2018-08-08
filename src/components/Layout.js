@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css, injectGlobal } from 'react-emotion';
-import { Link as GatsbyLink } from 'gatsby';
+import { Link } from 'gatsby';
 import './globalStyle';
 
 injectGlobal`
@@ -53,7 +53,7 @@ const Page = styled('div')`
   height: 100vh;
 `;
 
-const Article = styled('article')`
+export const Article = styled('article')`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -65,13 +65,13 @@ const Article = styled('article')`
   }
 `;
 
-const Main = styled('main')`
+export const TextSection = styled('main')`
   ${goldenRatio};
   ${padding};
   padding-top: 3em;
 `;
 
-const Aside = styled('aside')`
+export const ImageSection = styled('aside')`
   flex: 1;
   width: 100%;
   height: 100%;
@@ -88,7 +88,7 @@ const Aside = styled('aside')`
   }
 `;
 
-const NavBar = styled('nav')`
+const NavOuter = styled('nav')`
   display: flex;
   z-index: 1;
   color: #fff;
@@ -102,7 +102,6 @@ const NavBar = styled('nav')`
 const Contact = styled('div')`
   ${goldenRatio};
   background-color: #8f9e77;
-  color: #fff;
   display: flex;
   justify-content: space-between;
 `;
@@ -114,7 +113,7 @@ const Nav = styled('div')`
   background-color: darkolivegreen;
 `;
 
-export const Link = styled(GatsbyLink)`
+export const NavItem = styled(Link)`
   display: inline-block;
 
   ${padding};
@@ -124,20 +123,16 @@ export const Link = styled(GatsbyLink)`
   }
 `;
 
-const Layout = ({ image, children, navigation }) => (
-  <Page>
-    <Article>
-      <Main>{children}</Main>
-      {image ? <Aside>{image}</Aside> : null}
-    </Article>
-    <NavBar>
-      <Contact>
-        <Link to="/contact">Kontakt</Link>
-        <Link to="/maps">Pläne</Link>
-      </Contact>
-      <Nav>{navigation}</Nav>
-    </NavBar>
-  </Page>
+export const NavBar = ({ children }) => (
+  <NavOuter>
+    <Contact>
+      <NavItem to="/contact">Kontakt</NavItem>
+      <NavItem to="/maps/">Pläne</NavItem>
+    </Contact>
+    <Nav>{children}</Nav>
+  </NavOuter>
 );
+
+const Layout = ({ children }) => <Page>{children}</Page>;
 
 export default Layout;
