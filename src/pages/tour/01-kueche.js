@@ -11,29 +11,26 @@ import Layout, {
 import FluidImage from '../../components/FluidImage';
 import Icon from '../../components/Icon';
 
-const nextURL = '/';
+const prevURL = '/';
+const nextURL = '/tour/02-wohnzimmer';
 
-const Balkon = ({ data }) => (
+const Kueche = ({ data }) => (
   <Layout>
     <Article>
       <TextSection>
-        <h1>Der Balkon</h1>
-        <p>Natur genießen.</p>
+        <h1>Die Küche</h1>
+        <p>Eine gemütliche Küche im Landhausstil.</p>
       </TextSection>
 
       <ImageSection>
         <Link to={nextURL}>
-          <FluidImage
-            title="Aussicht vom Balkon"
-            alt="Balkon"
-            file={data.image}
-          />
+          <FluidImage title="Die Küche" alt="Küche" file={data.image} />
         </Link>
       </ImageSection>
     </Article>
 
     <NavBar>
-      <NavItem to="/">
+      <NavItem to={prevURL}>
         <Icon icon="left" />
       </NavItem>
       <NavItem to={nextURL}>
@@ -43,11 +40,11 @@ const Balkon = ({ data }) => (
   </Layout>
 );
 
-export default Balkon;
+export default Kueche;
 
 export const query = graphql`
   query {
-    image: file(name: { eq: "balkon-sw" }) {
+    image: file(name: { eq: "kueche-w" }) {
       ...ImageFragment
     }
   }

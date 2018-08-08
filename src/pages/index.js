@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import Layout, {
   Article,
@@ -10,6 +10,8 @@ import Layout, {
 } from '../components/Layout';
 import FluidImage from '../components/FluidImage';
 import Icon from '../components/Icon';
+
+const nextURL = '/tour/01-kueche';
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -23,13 +25,19 @@ const IndexPage = ({ data }) => (
       </TextSection>
 
       <ImageSection>
-        <FluidImage title="Landsitz" alt="Landsitz" file={data.image} />
+        <Link to={nextURL}>
+          <FluidImage
+            title="Außenansicht"
+            alt="Haus von außen"
+            file={data.image}
+          />
+        </Link>
       </ImageSection>
     </Article>
 
     <NavBar>
       <NavItem />
-      <NavItem to="/tour/balkon">
+      <NavItem to={nextURL}>
         Tour starten <Icon icon="right" />
       </NavItem>
     </NavBar>
