@@ -9,6 +9,7 @@ import Layout, {
   NavItem,
 } from '../components/Layout';
 import FluidImage from '../components/FluidImage';
+import Icon from '../components/Icon';
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -28,7 +29,9 @@ const IndexPage = ({ data }) => (
 
     <NavBar>
       <NavItem />
-      <NavItem to="/tour/balkon">Tour starten</NavItem>
+      <NavItem to="/tour/balkon">
+        Tour starten <Icon icon="right" />
+      </NavItem>
     </NavBar>
   </Layout>
 );

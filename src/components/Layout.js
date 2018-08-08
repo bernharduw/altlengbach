@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css, injectGlobal } from 'react-emotion';
 import { Link } from 'gatsby';
 import './globalStyle';
+import Icon from './Icon';
 
 injectGlobal`
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Playfair+Display:700');
@@ -126,8 +127,12 @@ export const NavItem = styled(Link)`
 export const NavBar = ({ children }) => (
   <NavOuter>
     <Contact>
-      <NavItem to="/contact">Kontakt</NavItem>
-      <NavItem to="/maps/">Pläne</NavItem>
+      <NavItem to="/contact">
+        <Icon icon="left" /> Kontakt
+      </NavItem>
+      <NavItem to="/maps/">
+        Pläne <Icon icon="down" />
+      </NavItem>
     </Contact>
     <Nav>{children}</Nav>
   </NavOuter>

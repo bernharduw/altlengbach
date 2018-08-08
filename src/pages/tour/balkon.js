@@ -9,6 +9,7 @@ import Layout, {
   NavItem,
 } from '../../components/Layout';
 import FluidImage from '../../components/FluidImage';
+import Icon from '../../components/Icon';
 
 const Balkon = ({ data }) => (
   <Layout>
@@ -28,8 +29,12 @@ const Balkon = ({ data }) => (
     </Article>
 
     <NavBar>
-      <NavItem to="/">&laquo;</NavItem>
-      <NavItem to="/">Wohnzimmer</NavItem>
+      <NavItem to="/">
+        <Icon icon="left" />
+      </NavItem>
+      <NavItem to="/">
+        Wohnzimmer <Icon icon="right" />
+      </NavItem>
     </NavBar>
   </Layout>
 );
