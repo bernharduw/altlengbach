@@ -48,6 +48,12 @@ export const garten = {
   name: 'Garten',
 };
 
+export const altlengbach = {
+  path: '/tour/09-altlengbach',
+  title: 'Der Ort',
+  name: 'Altlengbach',
+};
+
 export const summary = {
   path: '/tour/10-summary',
   title: 'Überblick',
