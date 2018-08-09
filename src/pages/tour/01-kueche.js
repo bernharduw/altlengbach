@@ -11,10 +11,11 @@ import Layout, {
 import FluidImage from '../../components/FluidImage';
 import Icon from '../../components/Icon';
 
-const prevURL = '/';
-const nextURL = '/tour/02-wohnzimmer';
-
-const Kueche = ({ data }) => (
+const Kueche = ({
+  data,
+  next = { path: '/tour/02-wohnzimmer', title: 'Wohnzimmer' },
+  previous = { path: '/', title: 'Startseite' },
+}) => (
   <Layout>
     <Article>
       <TextSection>
@@ -23,18 +24,18 @@ const Kueche = ({ data }) => (
       </TextSection>
 
       <ImageSection>
-        <Link to={nextURL}>
+        <Link to={next.path}>
           <FluidImage title="Die Küche" alt="Küche" file={data.image} />
         </Link>
       </ImageSection>
     </Article>
 
     <NavBar>
-      <NavItem to={prevURL}>
+      <NavItem to={previous.path} title={previous.title}>
         <Icon icon="left" />
       </NavItem>
-      <NavItem to={nextURL}>
-        Wohnzimmer <Icon icon="right" />
+      <NavItem to={next.path}>
+        {next.title} <Icon icon="right" />
       </NavItem>
     </NavBar>
   </Layout>

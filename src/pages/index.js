@@ -10,22 +10,31 @@ import Layout, {
 } from '../components/Layout';
 import FluidImage from '../components/FluidImage';
 import Icon from '../components/Icon';
+import Button from '../components/Button';
 
-const nextURL = '/tour/01-kueche';
-
-const IndexPage = ({ data }) => (
+const IndexPage = ({
+  data,
+  next = { path: '/tour/01-kueche', title: 'Küche' },
+  ƒ,
+}) => (
   <Layout>
     <Article>
       <TextSection>
         <h1>Ein charmanter Landsitz im Wienerwald</h1>
         <p>
-          In Altlengbach, an einer ruhigen Nebenstraße, steht ein Haus zum
-          Verkauf.
+          Zum Verkauf kommt ein charmantes, geräumiges Landhaus in Grünruhelage
+          mit unverbaubarem Blick in der Wienerwald-Gemeinde Altlengbach.{' '}
         </p>
+        <p>
+          Auf einer Grundstücksfläche von insgesamt 4.388m2 bietet ein großes
+          Haus mit über 200m2 Wohnfläche, einem großem Garten und einem eigenen
+          Waldstück viel Platz für eine große Familie.
+        </p>
+        {/* <Button to={next.path}>Tour durchs Haus starten</Button> */}
       </TextSection>
 
       <ImageSection>
-        <Link to={nextURL}>
+        <Link to={next.path}>
           <FluidImage
             title="Außenansicht"
             alt="Haus von außen"
@@ -37,7 +46,7 @@ const IndexPage = ({ data }) => (
 
     <NavBar>
       <NavItem />
-      <NavItem to={nextURL}>
+      <NavItem to={next.path}>
         Tour starten <Icon icon="right" />
       </NavItem>
     </NavBar>
