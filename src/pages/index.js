@@ -10,12 +10,9 @@ import Layout, {
 } from '../components/Layout';
 import FluidImage from '../components/FluidImage';
 import Icon from '../components/Icon';
+import { kueche, index } from '../pagesByName';
 
-const IndexPage = ({
-  data,
-  next = { path: '/tour/01-kueche', title: 'Küche' },
-  ƒ,
-}) => (
+const IndexPage = ({ data, next = kueche, current = index }) => (
   <Layout>
     <Article>
       <TextSection>
@@ -35,7 +32,7 @@ const IndexPage = ({
       <ImageSection>
         <Link to={next.path}>
           <FluidImage
-            title="Außenansicht"
+            title={current.title}
             alt="Haus von außen"
             file={data.image}
           />
