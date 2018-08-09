@@ -11,29 +11,32 @@ import Layout, {
 import FluidImage from '../../components/FluidImage';
 import Icon from '../../components/Icon';
 
-const Kueche = ({
+const Wohnzimmer = ({
   data,
-  next = { path: '/tour/02-wohnzimmer', title: 'Wohnzimmer' },
-  previous = { path: '/', title: 'Startseite' },
+  previous = { path: '/tour/01-kueche/', title: 'Küche' },
+  next = { path: '/tour/03-galerie/', title: 'Galerie' },
 }) => (
   <Layout>
     <Article>
       <TextSection>
-        <h1>Die Küche</h1>
+        <h1>Das Wohnzimmer</h1>
         <p>
-          Die geräumige Landhausküche ist mit einer gemütlichen Sitzecke mit
-          Jogltisch ausgestattet. Eine Speis und ein kleiner Vorbereitungsraum
-          grenzen direkt an.
+          An die Küche grenzt das Wohnzimmer, das man über die zentrale Diele
+          betritt. Der große Raum bietet Platz für entspannte Stunden.
         </p>
         <p>
-          Von der Küche gibt es einen Ausgang in den Garten mit zahlreichen
-          Gemüse- und Kräuterbeeten.
+          Ebenfalls im Erdgeschoss geht es weiter in das erste Schlafzimmer mit
+          eigenem Bad und Toilette.
         </p>
       </TextSection>
 
       <ImageSection>
         <Link to={next.path}>
-          <FluidImage title="Die Küche" alt="Küche" file={data.image} />
+          <FluidImage
+            title="Das Wohnzimmer"
+            alt="Wohnzimmer"
+            file={data.image}
+          />
         </Link>
       </ImageSection>
     </Article>
@@ -49,11 +52,11 @@ const Kueche = ({
   </Layout>
 );
 
-export default Kueche;
+export default Wohnzimmer;
 
 export const query = graphql`
   query {
-    image: file(name: { eq: "kueche-w" }) {
+    image: file(name: { eq: "wohnzimmer-w" }) {
       ...ImageFragment
     }
   }
