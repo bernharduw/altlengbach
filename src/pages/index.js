@@ -10,7 +10,6 @@ import Layout, {
 } from '../components/Layout';
 import FluidImage from '../components/FluidImage';
 import Icon from '../components/Icon';
-import Button from '../components/Button';
 
 const IndexPage = ({
   data,
