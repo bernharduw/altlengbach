@@ -28,10 +28,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: darkolivegreen;
 }
+a {
+  color: darkolivegreen;
+}
 `;
 
 const padding = css`
-  padding: 16px;
+  padding: 1em;
 
   @media (min-width: 960px) {
     padding-left: 3em;
@@ -116,8 +119,9 @@ const Nav = styled('div')`
 
 export const NavItem = styled(Link)`
   display: inline-block;
+  text-transform: uppercase;
 
-  ${padding};
+  padding: 1rem;
   @media (min-height: 480px) and (orientation: landscape) {
     padding-top: 2rem;
     padding-bottom: 2rem;
