@@ -12,7 +12,7 @@ import FluidImage from '../../components/FluidImage';
 import Icon from '../../components/Icon';
 import { balkon, garage, stadl } from '../../pagesByName';
 
-const Galerie = ({
+const Garage = ({
   data,
   previous = balkon,
   current = garage,
@@ -47,7 +47,7 @@ const Galerie = ({
   </Layout>
 );
 
-export default Galerie;
+export default Garage;
 
 export const query = graphql`
   query {

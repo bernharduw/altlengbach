@@ -24,8 +24,11 @@ const Galerie = ({
         <h1>Die Galerie</h1>
         <p>
           Die Treppe ins Obergeschoss führt auf eine große Galerie, wo es genug
-          Platz für einen Flügel und eine gemütliche Sitzecke im Erker gibt. Von
-          hier aus geht es in insgesamt vier weitere Schlafzimmer.
+          Platz für einen Flügel und eine gemütliche Sitzecke im Erker gibt.
+        </p>
+        <p>
+          Von hier aus geht es in insgesamt vier weitere Schlafzimmer, ein
+          zweites Badezimmer und ein separates WC.
         </p>
       </TextSection>
 
