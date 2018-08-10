@@ -41,7 +41,7 @@ const IndexPage = ({ data, next = kueche, current = index }) => (
     </Article>
 
     <NavBar>
-      <NavItem />
+      <div />
       <NavItem to={next.path}>
         Tour starten <Icon icon="right" />
       </NavItem>

@@ -132,7 +132,7 @@ export const NavBar = ({ children }) => (
   <NavOuter>
     <Contact>
       <NavItem to="/contact">
-        <Icon icon="left" /> Kontakt
+        <Icon icon="left" /> Anfrage
       </NavItem>
       <NavItem to="/maps/">
         Pläne <Icon icon="down" />

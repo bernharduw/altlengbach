@@ -56,6 +56,6 @@ export const altlengbach = {
 
 export const summary = {
   path: '/tour/10-summary',
-  title: 'Überblick',
-  name: 'Überblick',
+  title: 'Zusammenfassung',
+  name: 'Zusammenfassung',
 };
