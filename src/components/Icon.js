@@ -26,6 +26,24 @@ const icons = {
       <path fill="none" d="M0,0h24v24H0V0z" />
     </svg>
   ),
+  home: ({ className }) => (
+    <svg className={className} viewBox="0 0 24 24">
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+      <path d="M0 0h24v24H0z" fill="none" />
+    </svg>
+  ),
+  plans: ({ className }) => (
+    <svg className={className} viewBox="0 0 24 24">
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z" />
+    </svg>
+  ),
+  contact: ({ className }) => (
+    <svg className={className} viewBox="0 0 24 24">
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+      <path d="M0 0h24v24H0z" fill="none" />
+    </svg>
+  ),
 };
 
 const iconStyle = css`
