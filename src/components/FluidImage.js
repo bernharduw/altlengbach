@@ -20,4 +20,13 @@ export const query = graphql`
       }
     }
   }
+
+  fragment PlanFragment on File {
+    name
+    childImageSharp {
+      fixed(width: 400) {
+        ...GatsbyImageSharpFixed_withWebp_tracedSVG
+      }
+    }
+  }
 `;

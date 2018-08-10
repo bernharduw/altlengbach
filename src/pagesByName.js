@@ -65,3 +65,9 @@ export const contact = {
   title: 'Anfragen',
   name: 'Anfragen',
 };
+
+export const plans = {
+  path: '/floor-plans/',
+  title: 'Pläne',
+  name: 'Pläne',
+};
