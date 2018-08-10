@@ -5,7 +5,7 @@ import './globalStyle';
 import Icon from './Icon';
 
 injectGlobal`
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Playfair+Display:700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600|Playfair+Display:700');
 
 @media (max-width: 768px) {
   html {
@@ -79,6 +79,7 @@ export const ImageSection = styled('aside')`
   flex: 1;
   width: 100%;
   height: 100%;
+  background-color: rgba(85, 107, 49, 0.1);
 
   // Fix the gatsby image.
   .gatsby-image-wrapper,
@@ -105,7 +106,7 @@ const NavOuter = styled('nav')`
 
 const Contact = styled('div')`
   ${goldenRatio};
-  background-color: #8f9e77;
+  background-color: rgba(85, 107, 47, 0.8);
   display: flex;
   justify-content: space-between;
 `;
@@ -132,9 +133,9 @@ export const NavBar = ({ children }) => (
   <NavOuter>
     <Contact>
       <NavItem to="/contact">
-        <Icon icon="left" /> Anfrage
+        <Icon icon="left" /> Anfragen
       </NavItem>
-      <NavItem to="/maps/">
+      <NavItem to="/floor-plans/">
         Pläne <Icon icon="down" />
       </NavItem>
     </Contact>

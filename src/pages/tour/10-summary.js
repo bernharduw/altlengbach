@@ -16,7 +16,7 @@ const Summary = ({
   data,
   previous = altlengbach,
   current = summary,
-  next = index,
+  next = contact,
 }) => (
   <Layout>
     <Article>
@@ -29,9 +29,18 @@ const Summary = ({
           <li>Über 180 m² ausbaubarer Dachboden</li>
           <li>Mehrere getrennte Wohneinheiten möglich</li>
         </ul>
-        <p>Kaufpreis 480.000,00 €</p>
+        <p>
+          <strong>Kaufpreis: 480.000,00 €</strong>
+        </p>
 
-        <Link to={contact.path}>Anfragen</Link>
+        <p>
+          <Link to={contact.path}>Exposé anfordern</Link>
+        </p>
+        <p>
+          <Link to={index.path} title={index.title}>
+            Zur Startseite
+          </Link>
+        </p>
       </TextSection>
 
       <ImageSection>
