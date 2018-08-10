@@ -59,3 +59,9 @@ export const summary = {
   title: 'Zusammenfassung',
   name: 'Zusammenfassung',
 };
+
+export const contact = {
+  path: '/contact',
+  title: 'Anfragen',
+  name: 'Anfragen',
+};
