@@ -15,7 +15,7 @@ import { kueche, index } from '../pagesByName';
 const IndexPage = ({ data, next = kueche, current = index }) => (
   <Layout>
     <Article>
-      <TextSection>
+      <TextSection isHome>
         <h1>Ein charmanter Landsitz im Wienerwald</h1>
         <p>
           Zum Verkauf kommt ein charmantes, geräumiges Landhaus in Grünruhelage
@@ -41,7 +41,6 @@ const IndexPage = ({ data, next = kueche, current = index }) => (
     </Article>
 
     <NavBar>
-      <div />
       <NavItem to={next.path}>
         Tour starten <Icon icon="right" />
       </NavItem>

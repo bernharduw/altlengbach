@@ -64,16 +64,49 @@ export const Article = styled('article')`
   overflow: scroll; // To enable scrolling in portrait mode.
 
   @media (orientation: landscape) {
-    align-items: center;
+    align-items: stretch;
     flex-direction: row;
   }
 `;
 
-export const TextSection = styled('main')`
+const Main = styled('main')`
   ${goldenRatio};
-  ${padding};
-  padding-top: 3em;
+  display: flex;
+  flex-direction: column;
 `;
+
+const MainContent = styled('div')`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+const MainContentInner = styled('div')`
+  ${padding};
+  padding-top: 2em;
+  padding-bottom: 2em;
+  max-height: 100%;
+  overflow: auto;
+`;
+
+const HomeNav = styled(Link)`
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+`;
+
+export const TextSection = ({ isHome, children, ...props }) => (
+  <Main {...props}>
+    {isHome ? null : (
+      <HomeNav to="/" title="Startseite">
+        <Icon icon="home" />
+      </HomeNav>
+    )}
+    <MainContent>
+      <MainContentInner>{children}</MainContentInner>
+    </MainContent>
+  </Main>
+);
 
 export const ImageSection = styled('aside')`
   flex: 1;
@@ -114,15 +147,24 @@ const Contact = styled('div')`
 const Nav = styled('div')`
   flex: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: stretch;
   background-color: darkolivegreen;
 `;
 
 export const NavItem = styled(Link)`
   display: inline-block;
+  padding: 1rem;
+  text-align: center;
+  flex: 1;
   text-transform: uppercase;
 
-  padding: 1rem;
+  &:first-child {
+    text-align: left;
+  }
+  &:last-child {
+    text-align: right;
+  }
+
   @media (min-height: 480px) and (orientation: landscape) {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -133,10 +175,10 @@ export const NavBar = ({ children }) => (
   <NavOuter>
     <Contact>
       <NavItem to="/contact">
-        <Icon icon="left" /> Anfragen
+        <Icon icon="contact" /> Anfragen
       </NavItem>
       <NavItem to="/floor-plans/">
-        Pläne <Icon icon="down" />
+        Pläne <Icon icon="plans" />
       </NavItem>
     </Contact>
     <Nav>{children}</Nav>
