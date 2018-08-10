@@ -59,7 +59,7 @@ const Summary = ({
         <Icon icon="left" />
       </NavItem>
       <NavItem to={next.path} title={next.title}>
-        {next.name} <Icon icon="right" />
+        {next.name} <Icon icon="contact" />
       </NavItem>
     </NavBar>
   </Layout>
