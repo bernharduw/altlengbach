@@ -50,7 +50,7 @@ export const Text = styled('main')`
 
 export const Image = styled('aside')`
   flex: 1;
-  max-width: 512px;
+  max-width: 384px;
   background-color: rgba(85, 107, 49, 0.1);
 `;
 
