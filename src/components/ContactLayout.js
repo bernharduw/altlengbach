@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'react-emotion';
+import styled from 'react-emotion';
 import { Link } from 'gatsby';
 import './globalStyle';
 
@@ -9,18 +9,13 @@ const Page = styled('div')`
   height: 100vh;
 `;
 
-export const Content = styled('article')`
+export const Main = styled('main')`
   flex: 1;
-  overflow: scroll; // To enable scrolling in portrait mode.
-  border-bottom: 5.45rem solid darkolivegreen;
-  padding: 3em 1em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   background-color: rgba(85, 107, 49, 0.8);
   color: #fff;
-
-  @media (min-width: 960px) {
-    padding-left: 3em;
-    padding-right: 3em;
-  }
 
   a,
   h1,
@@ -29,35 +24,55 @@ export const Content = styled('article')`
   }
 `;
 
-export const Article = styled('article')`
+export const Content = styled('section')`
+  flex: 1;
+  overflow: scroll; // To enable scrolling in portrait mode.
+  padding: 3em 1em 1em;
+
+  @media (min-width: 960px) {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+`;
+
+export const Section = styled('section')`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 960px) {
+  @media (min-width: 640px) {
     flex-direction: row;
   }
 `;
 
-export const TextSection = styled('main')`
+export const Text = styled('main')`
   flex: 1;
 `;
 
-export const ImageSection = styled('aside')`
+export const Image = styled('aside')`
   flex: 1;
   max-width: 512px;
   background-color: rgba(85, 107, 49, 0.1);
 `;
 
-const Nav = styled('nav')`
+export const MainNav = styled('nav')`
   display: flex;
   align-items: stretch;
   justify-content: stretch;
   background-color: #fff;
-  border-bottom: 5.45rem solid rgba(85, 107, 49, 0.8);
+  border-bottom: 3.45rem solid rgba(85, 107, 49, 0.8);
+
+  @media (min-height: 480px) and (orientation: landscape) {
+    border-bottom-width: 5.45rem;
+  }
 
   a {
     text-decoration: none;
   }
+`;
+
+export const SubNav = styled('nav')`
+  ${MainNav};
+  background-color: darkolivegreen;
 `;
 
 export const NavItem = styled(Link)`
@@ -73,7 +88,7 @@ export const NavItem = styled(Link)`
   }
 `;
 
-export const NavBar = ({ children }) => <Nav>{children}</Nav>;
+export const NavItemExternal = NavItem.withComponent('a');
 
 const Layout = ({ children }) => <Page>{children}</Page>;
 
