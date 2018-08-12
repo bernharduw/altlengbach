@@ -1,7 +1,7 @@
 {
   "name": "prinzbachstrasse.at",
   "description": "Prinzbachstrasse Website",
-  "version": "1.0.0",
+  "version": "0.5.0",
   "author": "Bernhard Gschwantner <bernhard@unserwein.at>",
   "dependencies": {
     "emotion": "^9.2.6",
