@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "prinzbachstrasse.at",
+  "description": "Prinzbachstrasse Website",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Bernhard Gschwantner <bernhard@unserwein.at>",
   "dependencies": {
     "emotion": "^9.2.6",
     "emotion-server": "^9.2.6",
