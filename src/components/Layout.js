@@ -3,6 +3,7 @@ import styled, { css, injectGlobal } from 'react-emotion';
 import { Link } from 'gatsby';
 import './globalStyle';
 import Icon from './Icon';
+import TemplateWrapper from './TemplateWrapper';
 
 injectGlobal`
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600|Playfair+Display:700');
@@ -185,6 +186,10 @@ export const NavBar = ({ children }) => (
   </NavOuter>
 );
 
-const Layout = ({ children }) => <Page>{children}</Page>;
+const Layout = ({ children }) => (
+  <TemplateWrapper>
+    <Page>{children}</Page>
+  </TemplateWrapper>
+);
 
 export default Layout;

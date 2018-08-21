@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'react-emotion';
 import { Link } from 'gatsby';
 import './globalStyle';
+import TemplateWrapper from './TemplateWrapper';
 
 const Page = styled('div')`
   display: flex;
@@ -90,6 +91,10 @@ export const NavItem = styled(Link)`
 
 export const NavItemExternal = NavItem.withComponent('a');
 
-const Layout = ({ children }) => <Page>{children}</Page>;
+const Layout = ({ children }) => (
+  <TemplateWrapper>
+    <Page>{children}</Page>
+  </TemplateWrapper>
+);
 
 export default Layout;

@@ -3,6 +3,7 @@ import styled, { css } from 'react-emotion';
 import { Link } from 'gatsby';
 import './globalStyle';
 import Icon from './Icon';
+import TemplateWrapper from './TemplateWrapper';
 
 const padding = css`
   padding: 1em;
@@ -145,6 +146,10 @@ export const NavBar = ({ children }) => (
   </NavOuter>
 );
 
-const Layout = ({ children }) => <Page>{children}</Page>;
+const Layout = ({ children }) => (
+  <TemplateWrapper>
+    <Page>{children}</Page>
+  </TemplateWrapper>
+);
 
 export default Layout;
