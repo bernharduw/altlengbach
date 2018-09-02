@@ -1,7 +1,7 @@
 export const index = { path: '/', title: 'Außenansicht', name: 'Startseite' };
 
 export const kueche = {
-  path: '/tour/01-kueche/',
+  path: '/tour/01-kueche',
   title: 'Die Küche',
   name: 'Küche',
 };
@@ -71,3 +71,19 @@ export const plans = {
   title: 'Pläne',
   name: 'Pläne',
 };
+
+export const tourPages = [
+  index,
+  kueche,
+  wohnzimmer,
+  galerie,
+  masterbedroom,
+  balkon,
+  garage,
+  stadl,
+  garten,
+  altlengbach,
+  summary,
+];
+
+export const plansPages = [plans];
