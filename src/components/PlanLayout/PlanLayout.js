@@ -1,9 +1,10 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
 import { Link } from 'gatsby';
-import './globalStyle';
-import Icon from './Icon';
-import TemplateWrapper from './TemplateWrapper';
+
+import '../globalStyle';
+import Icon from '../Icon';
+import AnimatedPage from '../AnimatedPage';
 
 const padding = css`
   padding: 1em;
@@ -21,12 +22,6 @@ const goldenRatio = css`
     max-height: 100%;
     overflow: auto;
   }
-`;
-
-const Page = styled('div')`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
 `;
 
 export const Article = styled('article')`
@@ -146,10 +141,10 @@ export const NavBar = ({ children }) => (
   </NavOuter>
 );
 
-const Layout = ({ children }) => (
-  <TemplateWrapper>
-    <Page>{children}</Page>
-  </TemplateWrapper>
-);
+const Layout = styled(AnimatedPage)`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
 
 export default Layout;

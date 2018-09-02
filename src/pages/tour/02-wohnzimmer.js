@@ -3,12 +3,15 @@ import { graphql, Link } from 'gatsby';
 
 import Layout, {
   Article,
-  TextSection,
-  ImageSection,
   NavBar,
   NavItem,
-} from '../../components/Layout';
-import FluidImage from '../../components/FluidImage';
+} from '../../components/MainLayout/MainLayout';
+import AnimatedTextSection, {
+  H1,
+  P,
+} from '../../components/MainLayout/AnimatedTextSection';
+import ImageSection from '../../components/ImageSection';
+import AnimatedImage from '../../components/MainLayout/AnimatedImage';
 import Icon from '../../components/Icon';
 import { kueche, wohnzimmer, galerie } from '../../pagesByName';
 
@@ -20,21 +23,21 @@ const Wohnzimmer = ({
 }) => (
   <Layout>
     <Article>
-      <TextSection>
-        <h1>Das Wohnzimmer</h1>
-        <p>
+      <AnimatedTextSection>
+        <H1>Das Wohnzimmer</H1>
+        <P>
           An die Küche grenzt das Wohnzimmer, das man über die zentrale Diele
           betritt. Der große Raum bietet Platz für entspannte Stunden.
-        </p>
-        <p>
+        </P>
+        <P>
           Ebenfalls im Erdgeschoss geht es weiter in das erste Schlafzimmer mit
           eigenem Bad und Toilette.
-        </p>
-      </TextSection>
+        </P>
+      </AnimatedTextSection>
 
       <ImageSection>
         <Link to={next.path}>
-          <FluidImage
+          <AnimatedImage
             title={current.title}
             alt={current.name}
             file={data.image}

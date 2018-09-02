@@ -11,7 +11,7 @@ import Layout, {
   SubNav,
   NavItem,
   NavItemExternal,
-} from '../components/ContactLayout';
+} from '../components/ContactLayout/ContactLayout';
 import FluidImage from '../components/FluidImage';
 import Icon from '../components/Icon';
 import { index, contact } from '../pagesByName';

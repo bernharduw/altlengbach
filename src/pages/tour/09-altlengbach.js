@@ -3,12 +3,15 @@ import { graphql, Link } from 'gatsby';
 
 import Layout, {
   Article,
-  TextSection,
-  ImageSection,
   NavBar,
   NavItem,
-} from '../../components/Layout';
-import FluidImage from '../../components/FluidImage';
+} from '../../components/MainLayout/MainLayout';
+import AnimatedTextSection, {
+  H1,
+  P,
+} from '../../components/MainLayout/AnimatedTextSection';
+import ImageSection from '../../components/ImageSection';
+import AnimatedImage from '../../components/MainLayout/AnimatedImage';
 import Icon from '../../components/Icon';
 import { garten, altlengbach, summary } from '../../pagesByName';
 
@@ -20,9 +23,9 @@ const Altlengbach = ({
 }) => (
   <Layout>
     <Article>
-      <TextSection>
-        <h1>Die Umgebung</h1>
-        <p>
+      <AnimatedTextSection>
+        <H1>Die Umgebung</H1>
+        <P>
           Der Ortskern von Altlengbach befindet sich in Gehweite vom Landhaus.
           Zwei Kindergärten, eine Volksschule und eine Bücherei direkt im Ort
           sowie eine Mittelschule und eine Musikschule in der unmittelbaren Nähe
@@ -30,28 +33,32 @@ const Altlengbach = ({
           <a href="http://www.altlengbach.gv.at/Leben/Kinder_Betreuung/Allgemeine_Information">
             Bildung
           </a>.
-        </p>
-        <p>
+        </P>
+        <P>
           Zwei praktische Ärte und eine große Apotheke befinden sich direkt im
           Ort, außerdem ein Zahnarzt und ein Tierarzt.
-        </p>
-        <p>
+        </P>
+        <P>
           Auch kulinarisch kommen Sie voll auf Ihre Kosten: Gemütliche
           Gasthäuser, Cafés und Heurigen in der Umgebung sowie zwei
           Hotelrestaurants laden zu genussvollen Stunden ein.
-        </p>
-        <p>
+        </P>
+        <P>
           Die Autobahnauffahrt A1 Altlengbach ist 5 Minuten entfernt, bis St.
           Pölten benötigt man 15 Minuten mit dem Auto, bis zur Stadtgrenze von
           Wien 20 Minuten. Der Bahnhof Eichgraben-Altlengbach ist mit dem Bus
           oder per PKW in 5 Minuten erreichbar.
-        </p>
-        <a href="http://www.altlengbach.gv.at/">Zur Website von Altlengbach</a>
-      </TextSection>
+        </P>
+        <P>
+          <a href="http://www.altlengbach.gv.at/">
+            Zur Website von Altlengbach
+          </a>
+        </P>
+      </AnimatedTextSection>
 
       <ImageSection>
         <Link to={next.path}>
-          <FluidImage
+          <AnimatedImage
             title={current.title}
             alt={current.name}
             file={data.image}

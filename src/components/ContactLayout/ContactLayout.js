@@ -1,14 +1,9 @@
 import React from 'react';
 import styled from 'react-emotion';
 import { Link } from 'gatsby';
-import './globalStyle';
-import TemplateWrapper from './TemplateWrapper';
 
-const Page = styled('div')`
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-`;
+import '../globalStyle';
+import AnimatedPage from '../AnimatedPage';
 
 export const Main = styled('main')`
   flex: 1;
@@ -91,10 +86,10 @@ export const NavItem = styled(Link)`
 
 export const NavItemExternal = NavItem.withComponent('a');
 
-const Layout = ({ children }) => (
-  <TemplateWrapper>
-    <Page>{children}</Page>
-  </TemplateWrapper>
-);
+const Layout = styled(AnimatedPage)`
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+`;
 
 export default Layout;

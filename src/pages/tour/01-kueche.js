@@ -3,12 +3,15 @@ import { graphql, Link } from 'gatsby';
 
 import Layout, {
   Article,
-  TextSection,
-  ImageSection,
   NavBar,
   NavItem,
-} from '../../components/Layout';
-import FluidImage from '../../components/FluidImage';
+} from '../../components/MainLayout/MainLayout';
+import AnimatedTextSection, {
+  H1,
+  P,
+} from '../../components/MainLayout/AnimatedTextSection';
+import ImageSection from '../../components/ImageSection';
+import AnimatedImage from '../../components/MainLayout/AnimatedImage';
 import Icon from '../../components/Icon';
 import { index, kueche, wohnzimmer } from '../../pagesByName';
 
@@ -20,22 +23,22 @@ const Kueche = ({
 }) => (
   <Layout>
     <Article>
-      <TextSection>
-        <h1>Die Küche</h1>
-        <p>
+      <AnimatedTextSection>
+        <H1>Die Küche</H1>
+        <P>
           Die geräumige Landhausküche ist mit einer gemütlichen Sitzecke mit
           Jogltisch ausgestattet. Eine Speis und ein kleiner Vorbereitungsraum
           grenzen direkt an.
-        </p>
-        <p>
+        </P>
+        <P>
           Von der Küche gibt es einen Ausgang in den Garten mit zahlreichen
           Gemüse- und Kräuterbeeten.
-        </p>
-      </TextSection>
+        </P>
+      </AnimatedTextSection>
 
       <ImageSection>
         <Link to={next.path}>
-          <FluidImage
+          <AnimatedImage
             title={current.title}
             alt={current.name}
             file={data.image}

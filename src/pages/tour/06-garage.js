@@ -3,12 +3,15 @@ import { graphql, Link } from 'gatsby';
 
 import Layout, {
   Article,
-  TextSection,
-  ImageSection,
   NavBar,
   NavItem,
-} from '../../components/Layout';
-import FluidImage from '../../components/FluidImage';
+} from '../../components/MainLayout/MainLayout';
+import AnimatedTextSection, {
+  H1,
+  P,
+} from '../../components/MainLayout/AnimatedTextSection';
+import ImageSection from '../../components/ImageSection';
+import AnimatedImage from '../../components/MainLayout/AnimatedImage';
 import Icon from '../../components/Icon';
 import { balkon, garage, stadl } from '../../pagesByName';
 
@@ -20,14 +23,14 @@ const Garage = ({
 }) => (
   <Layout>
     <Article>
-      <TextSection>
-        <h1>Die Garage</h1>
-        <p>Die Garage bietet genügend Platz für vier Fahrzeuge.</p>
-      </TextSection>
+      <AnimatedTextSection>
+        <H1>Die Garage</H1>
+        <P>Die Garage bietet genügend Platz für vier Fahrzeuge.</P>
+      </AnimatedTextSection>
 
       <ImageSection>
         <Link to={next.path}>
-          <FluidImage
+          <AnimatedImage
             title={current.title}
             alt={current.name}
             file={data.image}

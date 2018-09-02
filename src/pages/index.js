@@ -3,35 +3,38 @@ import { graphql, Link } from 'gatsby';
 
 import Layout, {
   Article,
-  TextSection,
-  ImageSection,
   NavBar,
   NavItem,
-} from '../components/Layout';
-import FluidImage from '../components/FluidImage';
+} from '../components/MainLayout/MainLayout';
+import AnimatedTextSection, {
+  H1,
+  P,
+} from '../components/MainLayout/AnimatedTextSection';
+import ImageSection from '../components/ImageSection';
+import AnimatedImage from '../components/MainLayout/AnimatedImage';
 import Icon from '../components/Icon';
 import { kueche, index } from '../pagesByName';
 
 const IndexPage = ({ data, next = kueche, current = index }) => (
   <Layout>
     <Article>
-      <TextSection isHome>
-        <h1>Ein charmanter Landsitz im Wienerwald</h1>
-        <p>
+      <AnimatedTextSection isHome>
+        <H1>Ein charmanter Landsitz im Wienerwald</H1>
+        <P>
           Zum Verkauf kommt ein charmantes, geräumiges Landhaus in Grünruhelage
           mit unverbaubarem Blick in der Wienerwald-Gemeinde Altlengbach.{' '}
-        </p>
-        <p>
+        </P>
+        <P>
           Auf einer Grundstücksfläche von insgesamt 4.388m2 bietet ein großes
           Haus mit über 200m2 Wohnfläche, einem großem Garten und einem eigenen
           Waldstück viel Platz für eine große Familie.
-        </p>
+        </P>
         {/* <Button to={next.path}>Tour durchs Haus starten</Button> */}
-      </TextSection>
+      </AnimatedTextSection>
 
       <ImageSection>
         <Link to={next.path}>
-          <FluidImage
+          <AnimatedImage
             title={current.title}
             alt="Haus von außen"
             file={data.image}

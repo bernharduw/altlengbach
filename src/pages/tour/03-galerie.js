@@ -3,12 +3,15 @@ import { graphql, Link } from 'gatsby';
 
 import Layout, {
   Article,
-  TextSection,
-  ImageSection,
   NavBar,
   NavItem,
-} from '../../components/Layout';
-import FluidImage from '../../components/FluidImage';
+} from '../../components/MainLayout/MainLayout';
+import AnimatedTextSection, {
+  H1,
+  P,
+} from '../../components/MainLayout/AnimatedTextSection';
+import ImageSection from '../../components/ImageSection';
+import AnimatedImage from '../../components/MainLayout/AnimatedImage';
 import Icon from '../../components/Icon';
 import { wohnzimmer, galerie, masterbedroom } from '../../pagesByName';
 
@@ -20,21 +23,21 @@ const Galerie = ({
 }) => (
   <Layout>
     <Article>
-      <TextSection>
-        <h1>Die Galerie</h1>
-        <p>
+      <AnimatedTextSection>
+        <H1>Die Galerie</H1>
+        <P>
           Die Treppe ins Obergeschoss führt auf eine große Galerie, wo es genug
           Platz für einen Flügel und eine gemütliche Sitzecke im Erker gibt.
-        </p>
-        <p>
+        </P>
+        <P>
           Von hier aus geht es in insgesamt vier weitere Schlafzimmer, ein
           zweites Badezimmer und ein separates WC.
-        </p>
-      </TextSection>
+        </P>
+      </AnimatedTextSection>
 
       <ImageSection>
         <Link to={next.path}>
-          <FluidImage
+          <AnimatedImage
             title={current.title}
             alt={current.name}
             file={data.image}

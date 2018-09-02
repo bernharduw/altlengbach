@@ -9,7 +9,7 @@ import Layout, {
   ImageSection,
   NavBar,
   NavItem,
-} from '../../components/PlanLayout';
+} from '../../components/PlanLayout/PlanLayout';
 import Icon from '../../components/Icon';
 import { index } from '../../pagesByName';
 

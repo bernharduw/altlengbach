@@ -3,12 +3,15 @@ import { graphql, Link } from 'gatsby';
 
 import Layout, {
   Article,
-  TextSection,
-  ImageSection,
   NavBar,
   NavItem,
-} from '../../components/Layout';
-import FluidImage from '../../components/FluidImage';
+} from '../../components/MainLayout/MainLayout';
+import AnimatedTextSection, {
+  H1,
+  P,
+} from '../../components/MainLayout/AnimatedTextSection';
+import ImageSection from '../../components/ImageSection';
+import AnimatedImage from '../../components/MainLayout/AnimatedImage';
 import Icon from '../../components/Icon';
 import { stadl, garten, altlengbach } from '../../pagesByName';
 
@@ -20,22 +23,22 @@ const Garten = ({
 }) => (
   <Layout>
     <Article>
-      <TextSection>
-        <h1>Der Naturgarten</h1>
-        <p>
+      <AnimatedTextSection>
+        <H1>Der Naturgarten</H1>
+        <P>
           Der Garten ist als romantischer Landhausgarten angelegt. Auf der
           Terrasse wurde Zogelsdorfer Sandstein verlegt.
-        </p>
-        <p>
+        </P>
+        <P>
           Ein großer Gemüse- und Kräutergarten, viele Beerensträucher, eine
           große Wiese sowie Nuss- und Apfelbäume im hinteren Teil des Gartens
           runden das Gesamtbild ab.
-        </p>
-      </TextSection>
+        </P>
+      </AnimatedTextSection>
 
       <ImageSection>
         <Link to={next.path}>
-          <FluidImage
+          <AnimatedImage
             title={current.title}
             alt={current.name}
             file={data.image}

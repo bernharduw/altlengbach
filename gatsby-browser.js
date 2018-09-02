@@ -1,26 +1,31 @@
-/* globals window CustomEvent */
-import createHistory from 'history/createBrowserHistory';
+import React from 'react';
+import posed, { PoseGroup } from 'react-pose';
 
-const timeout = 500;
-const historyExitingEventType = `history::exiting`;
+const PageTransition = posed.div();
 
-const getUserConfirmation = (pathname, callback) => {
-  const event = new CustomEvent(historyExitingEventType, {
-    detail: { pathname },
-  });
-  window.dispatchEvent(event);
-  setTimeout(() => {
-    callback(true);
-  }, timeout);
+const getPoseName = ({ location }, name) => {
+  const direction =
+    location.pathname === '/'
+      ? 'Previous'
+      : location.pathname === '/floor-plans/'
+        ? 'Down'
+        : location.pathname === '/contact'
+          ? 'Left'
+          : 'Next';
+  return `${name}${direction}`;
 };
 
-let history;
-if (typeof document !== 'undefined') {
-  history = createHistory({ getUserConfirmation });
-  // block must return a string to conform
-  history.block((location, action) => location.pathname);
-}
-
-export let replaceHistory = () => history;
-
-export { historyExitingEventType, timeout };
+export const replaceComponentRenderer = ({ props, ...other }) => {
+  const { component: Component } = props.pageResources;
+  return (
+    <PoseGroup
+      preEnterPose={getPoseName(props, 'entering')}
+      enterPose={getPoseName(props, 'enter')}
+      exitPose={getPoseName(props, 'exit')}
+    >
+      <PageTransition key={props.location.key}>
+        <Component {...props} />
+      </PageTransition>
+    </PoseGroup>
+  );
+};

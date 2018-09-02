@@ -3,12 +3,15 @@ import { graphql, Link } from 'gatsby';
 
 import Layout, {
   Article,
-  TextSection,
-  ImageSection,
   NavBar,
   NavItem,
-} from '../../components/Layout';
-import FluidImage from '../../components/FluidImage';
+} from '../../components/MainLayout/MainLayout';
+import AnimatedTextSection, {
+  H1,
+  P,
+} from '../../components/MainLayout/AnimatedTextSection';
+import ImageSection from '../../components/ImageSection';
+import AnimatedImage from '../../components/MainLayout/AnimatedImage';
 import Icon from '../../components/Icon';
 import { masterbedroom, balkon, garage } from '../../pagesByName';
 
@@ -20,17 +23,17 @@ const Balkon = ({
 }) => (
   <Layout>
     <Article>
-      <TextSection>
-        <h1>Der Ausblick vom Balkon</h1>
-        <p>
+      <AnimatedTextSection>
+        <H1>Der Ausblick vom Balkon</H1>
+        <P>
           Vom zweiten Schlafzimmer aus gelangt man auf den Balkon mit tollem
           Blick in den Garten und die umliegenden Wiesen und Wälder.
-        </p>
-      </TextSection>
+        </P>
+      </AnimatedTextSection>
 
       <ImageSection>
         <Link to={next.path}>
-          <FluidImage
+          <AnimatedImage
             title={current.title}
             alt={current.name}
             file={data.image}

@@ -18,6 +18,7 @@
     "react-dom": "^16.4.1",
     "react-emotion": "^9.2.6",
     "react-helmet": "^5.2.0",
+    "react-pose": "^3.2.1",
     "react-transition-group": "^2.4.0",
     "serve": "^9.4.0"
   },

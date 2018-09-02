@@ -1,9 +1,10 @@
 import React from 'react';
 import styled, { css, injectGlobal } from 'react-emotion';
 import { Link } from 'gatsby';
-import './globalStyle';
-import Icon from './Icon';
-import TemplateWrapper from './TemplateWrapper';
+
+import '../globalStyle';
+import Icon from '../Icon';
+import AnimatedPage from '../AnimatedPage';
 
 injectGlobal`
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600|Playfair+Display:700');
@@ -34,15 +35,6 @@ a {
 }
 `;
 
-const padding = css`
-  padding: 1em;
-
-  @media (min-width: 960px) {
-    padding-left: 3em;
-    padding-right: 3em;
-  }
-`;
-
 const goldenRatio = css`
   @media (orientation: landscape) {
     flex: 0 38.1966%;
@@ -50,12 +42,6 @@ const goldenRatio = css`
     max-height: 100%;
     overflow: auto;
   }
-`;
-
-const Page = styled('div')`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
 `;
 
 export const Article = styled('article')`
@@ -67,63 +53,6 @@ export const Article = styled('article')`
   @media (orientation: landscape) {
     align-items: stretch;
     flex-direction: row;
-  }
-`;
-
-const Main = styled('main')`
-  ${goldenRatio};
-  display: flex;
-  flex-direction: column;
-`;
-
-const MainContent = styled('div')`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-const MainContentInner = styled('div')`
-  ${padding};
-  padding-top: 2em;
-  padding-bottom: 2em;
-  max-height: 100%;
-  overflow: auto;
-`;
-
-const HomeNav = styled(Link)`
-  display: block;
-  text-align: center;
-  padding: 0.5rem;
-`;
-
-export const TextSection = ({ isHome, children, ...props }) => (
-  <Main {...props}>
-    {isHome ? null : (
-      <HomeNav to="/" title="Startseite">
-        <Icon icon="home" />
-      </HomeNav>
-    )}
-    <MainContent>
-      <MainContentInner>{children}</MainContentInner>
-    </MainContent>
-  </Main>
-);
-
-export const ImageSection = styled('aside')`
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(85, 107, 49, 0.1);
-
-  // Fix the gatsby image.
-  .gatsby-image-wrapper,
-  .gatsby-image-outer-wrapper {
-    height: 100%;
-  }
-
-  .gatsby-image-wrapper div:first-child {
-    height: 100%;
-    padding-bottom: 0 !important;
   }
 `;
 
@@ -140,7 +69,7 @@ const NavOuter = styled('nav')`
 
 const Contact = styled('div')`
   ${goldenRatio};
-  background-color: rgba(85, 107, 47, 0.8);
+  background-color: #7c8c62;
   display: flex;
   justify-content: space-between;
 `;
@@ -186,10 +115,10 @@ export const NavBar = ({ children }) => (
   </NavOuter>
 );
 
-const Layout = ({ children }) => (
-  <TemplateWrapper>
-    <Page>{children}</Page>
-  </TemplateWrapper>
-);
+const Layout = styled(AnimatedPage)`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
 
 export default Layout;
