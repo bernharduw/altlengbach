@@ -3,11 +3,7 @@ import { graphql, Link } from 'gatsby';
 
 import Layout from '../../components/MainLayout';
 import Article from '../../components/Article';
-import Text, {
-  H1,
-  P,
-  Li,
-} from '../../components/AnimatedTextSection';
+import Text, { H1, P, Li } from '../../components/AnimatedTextSection';
 import ImageSection from '../../components/ImageSection';
 import AnimatedImage from '../../components/AnimatedImage';
 import NavBar from '../../components/NavBar';
@@ -47,13 +43,12 @@ const Summary = ({
       </Text>
 
       <ImageSection>
-        <Link to={next.path}>
-          <AnimatedImage
-            title={current.title}
-            alt={current.name}
-            file={data.image}
-          />
-        </Link>
+        <AnimatedImage
+          to={next.path}
+          title={current.title}
+          alt={current.name}
+          file={data.image}
+        />
       </ImageSection>
     </Article>
 

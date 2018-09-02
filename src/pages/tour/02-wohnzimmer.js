@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../../components/MainLayout';
 import Article from '../../components/Article';
@@ -32,13 +32,12 @@ const Wohnzimmer = ({
       </Text>
 
       <ImageSection>
-        <Link to={next.path}>
-          <AnimatedImage
-            title={current.title}
-            alt={current.name}
-            file={data.image}
-          />
-        </Link>
+        <AnimatedImage
+          to={next.path}
+          title={current.title}
+          alt={current.name}
+          file={data.image}
+        />
       </ImageSection>
     </Article>
 
