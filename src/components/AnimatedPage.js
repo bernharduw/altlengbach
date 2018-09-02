@@ -2,10 +2,10 @@ import posed from 'react-pose';
 
 const transition = { ease: 'easeOut' };
 const right = { x: '100vw', transition };
-const center = { x: '0vw', y: '0vw', transition };
+const center = { x: '0vw', y: '0vh', transition };
 const left = { x: '-100vw', transition };
-const above = { y: '100vw', transition };
-const below = { y: '-100vw', transition };
+const above = { y: '100vh', transition };
+const below = { y: '-100vh', transition };
 
 const AnimatedPage = posed.div({
   enteringLeft: left,

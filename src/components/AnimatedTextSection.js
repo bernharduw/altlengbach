@@ -16,6 +16,8 @@ const AnimatedTextWrapper = posed.div({
   enteringPrevious: parentConfig,
   enterPrevious: { ...parentConfig, delayChildren: 200 },
   exitPrevious: parentConfig,
+  entering: parentConfig,
+  enter: parentConfig,
 });
 
 const AnimatedTextSection = ({ children, ...props }) => (
@@ -41,12 +43,20 @@ const normal = {
 //   transition,
 // };
 const childConfig = {
+  entering: left,
+  enter: normal,
   enteringNext: left, // right,
   enterNext: normal,
   exitNext: left,
   enteringPrevious: left,
   enterPrevious: normal,
   exitPrevious: left, // right,
+  enteringLevelUp: left,
+  enterLevelUp: normal,
+  exitLevelUp: left, // right,
+  enteringLevelDown: left,
+  enterLevelDown: normal,
+  exitLevelDown: left, // right,
 };
 
 export const H1 = posed.h1(childConfig);

@@ -10,6 +10,7 @@ export const replaceComponentRenderer = ({ props, ...other }) => {
     <DirectionManager pathname={props.location.pathname}>
       {({ getPoseName }) => (
         <PoseGroup
+          animateOnMount
           preEnterPose={getPoseName('entering')}
           enterPose={getPoseName('enter')}
           exitPose={getPoseName('exit')}
