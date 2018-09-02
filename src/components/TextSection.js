@@ -1,8 +1,7 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
 import { Link } from 'gatsby';
-import '../globalStyle';
-import Icon from '../Icon';
+import Icon from './Icon';
 
 const padding = css`
   padding: 1em;
@@ -13,7 +12,7 @@ const padding = css`
   }
 `;
 
-const goldenRatio = css`
+export const goldenRatio = css`
   @media (orientation: landscape) {
     flex: 0 38.1966%;
     max-width: 38.1966%;
@@ -49,9 +48,9 @@ const HomeNav = styled(Link)`
   padding: 0.5rem;
 `;
 
-const TextSection = ({ isHome, children, ...props }) => (
+const TextSection = ({ hideHome, children, ...props }) => (
   <Main {...props}>
-    {isHome ? null : (
+    {hideHome ? null : (
       <HomeNav to="/" title="Startseite">
         <Icon icon="home" />
       </HomeNav>

@@ -1,9 +1,7 @@
-import React from 'react';
 import styled from 'react-emotion';
 import { Link } from 'gatsby';
 
-import '../globalStyle';
-import AnimatedPage from '../AnimatedPage';
+import AnimatedPage from './AnimatedPage';
 
 export const Main = styled('main')`
   flex: 1;

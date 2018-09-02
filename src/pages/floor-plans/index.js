@@ -3,13 +3,12 @@ import { graphql, Link } from 'gatsby';
 import Image from 'gatsby-image';
 import styled from 'react-emotion';
 
-import Layout, {
-  Article,
-  TextSection,
-  ImageSection,
-  NavBar,
-  NavItem,
-} from '../../components/PlanLayout/PlanLayout';
+import Layout from '../../components/PlanLayout';
+import Article from '../../components/Article';
+import NavBar from '../../components/NavBar';
+import NavItem from '../../components/NavItem';
+import Text, { H1 } from '../../components/AnimatedTextSection';
+import ImageSection from '../../components/ImageSection';
 import Icon from '../../components/Icon';
 import { index } from '../../pagesByName';
 
@@ -92,15 +91,17 @@ const Label = styled('div')`
 
 const Plans = ({ data, back = index }) => (
   <Layout>
-    <NavBar>
-      <NavItem to={back.path} title={back.name}>
-        <Icon icon="up" /> Zurück
-      </NavItem>
-    </NavBar>
+    <NavBar
+      secondaryItem={
+        <NavItem to="/">
+          Startseite <Icon icon="home" />
+        </NavItem>
+      }
+    />
 
     <Article>
-      <TextSection>
-        <h1>Pläne</h1>
+      <Text hideHome>
+        <H1>Pläne</H1>
         <ul>
           <li>
             <Link to="/floor-plans/dachboden">Dachboden</Link>
@@ -118,7 +119,7 @@ const Plans = ({ data, back = index }) => (
             <Link to="/floor-plans/grundstueck">Grundstück</Link>
           </li> */}
         </ul>
-      </TextSection>
+      </Text>
 
       <ImageSection>
         <PlanContainer>

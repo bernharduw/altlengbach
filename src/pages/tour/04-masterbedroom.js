@@ -1,17 +1,13 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 
-import Layout, {
-  Article,
-  NavBar,
-  NavItem,
-} from '../../components/MainLayout/MainLayout';
-import AnimatedTextSection, {
-  H1,
-  P,
-} from '../../components/MainLayout/AnimatedTextSection';
+import Layout from '../../components/MainLayout';
+import Article from '../../components/Article';
+import Text, { H1, P } from '../../components/AnimatedTextSection';
 import ImageSection from '../../components/ImageSection';
-import AnimatedImage from '../../components/MainLayout/AnimatedImage';
+import AnimatedImage from '../../components/AnimatedImage';
+import NavBar from '../../components/NavBar';
+import NavItem from '../../components/NavItem';
 import Icon from '../../components/Icon';
 import { galerie, masterbedroom, balkon } from '../../pagesByName';
 
@@ -23,7 +19,7 @@ const Masterbedroom = ({
 }) => (
   <Layout>
     <Article>
-      <AnimatedTextSection>
+      <Text>
         <H1>Das Eltern-Schlafzimmer</H1>
         <P>Eines von insgesamt vier Schlafzimmern im Obergeschoss.</P>
         <P>
@@ -31,7 +27,7 @@ const Masterbedroom = ({
           wurden bereits die notwendigen Anschlüsse für eine weitere Küche
           vorbereitet.
         </P>
-      </AnimatedTextSection>
+      </Text>
 
       <ImageSection>
         <Link to={next.path}>

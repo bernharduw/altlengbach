@@ -1,17 +1,13 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 
-import Layout, {
-  Article,
-  NavBar,
-  NavItem,
-} from '../../components/MainLayout/MainLayout';
-import AnimatedTextSection, {
-  H1,
-  P,
-} from '../../components/MainLayout/AnimatedTextSection';
+import Layout from '../../components/MainLayout';
+import Article from '../../components/Article';
+import Text, { H1, P } from '../../components/AnimatedTextSection';
 import ImageSection from '../../components/ImageSection';
-import AnimatedImage from '../../components/MainLayout/AnimatedImage';
+import AnimatedImage from '../../components/AnimatedImage';
+import NavBar from '../../components/NavBar';
+import NavItem from '../../components/NavItem';
 import Icon from '../../components/Icon';
 import { index, kueche, wohnzimmer } from '../../pagesByName';
 
@@ -23,7 +19,7 @@ const Kueche = ({
 }) => (
   <Layout>
     <Article>
-      <AnimatedTextSection>
+      <Text>
         <H1>Die Küche</H1>
         <P>
           Die geräumige Landhausküche ist mit einer gemütlichen Sitzecke mit
@@ -34,7 +30,7 @@ const Kueche = ({
           Von der Küche gibt es einen Ausgang in den Garten mit zahlreichen
           Gemüse- und Kräuterbeeten.
         </P>
-      </AnimatedTextSection>
+      </Text>
 
       <ImageSection>
         <Link to={next.path}>

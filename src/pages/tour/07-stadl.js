@@ -1,30 +1,26 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 
-import Layout, {
-  Article,
-  NavBar,
-  NavItem,
-} from '../../components/MainLayout/MainLayout';
-import AnimatedTextSection, {
-  H1,
-  P,
-} from '../../components/MainLayout/AnimatedTextSection';
+import Layout from '../../components/MainLayout';
+import Article from '../../components/Article';
+import Text, { H1, P } from '../../components/AnimatedTextSection';
 import ImageSection from '../../components/ImageSection';
-import AnimatedImage from '../../components/MainLayout/AnimatedImage';
+import AnimatedImage from '../../components/AnimatedImage';
+import NavBar from '../../components/NavBar';
+import NavItem from '../../components/NavItem';
 import Icon from '../../components/Icon';
 import { garage, stadl, garten } from '../../pagesByName';
 
 const Stadl = ({ data, previous = garage, current = stadl, next = garten }) => (
   <Layout>
     <Article>
-      <AnimatedTextSection>
+      <Text>
         <H1>Der Stadl</H1>
         <P>
           Das Nebengebäude bietet Stellplätze für landwirtschaftliche Fahrzeuge
           und eine weitere Einliegerwohnung.
         </P>
-      </AnimatedTextSection>
+      </Text>
 
       <ImageSection>
         <Link to={next.path}>

@@ -2,7 +2,7 @@ import React from 'react';
 import posed from 'react-pose';
 import TextSection from './TextSection';
 
-const transition = { ease: 'easeOut' };
+const transition = { x: { ease: 'easeOut' } };
 
 const parentConfig = {
   staggerChildren: 50,
@@ -35,18 +35,18 @@ const normal = {
   opacity: 1,
   transition,
 };
-const right = {
-  x: 50,
-  opacity: 0,
-  transition,
-};
+// const right = {
+//   x: 50,
+//   opacity: 0,
+//   transition,
+// };
 const childConfig = {
-  enteringNext: right,
+  enteringNext: left, // right,
   enterNext: normal,
   exitNext: left,
   enteringPrevious: left,
   enterPrevious: normal,
-  exitPrevious: right,
+  exitPrevious: left, // right,
 };
 
 export const H1 = posed.h1(childConfig);

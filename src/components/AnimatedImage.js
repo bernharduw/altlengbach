@@ -1,8 +1,8 @@
 import React from 'react';
 import posed from 'react-pose';
-import FluidImage from '../../components/FluidImage';
+import FluidImage from './FluidImage';
 
-const transition = { ease: 'easeOut' };
+const transition = { x: { ease: 'easeOut' } };
 const right = { x: '100%', transition };
 const center = { x: '0%', transition };
 const left = { x: '-100%', transition };

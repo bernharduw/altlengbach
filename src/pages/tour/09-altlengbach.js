@@ -1,17 +1,13 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 
-import Layout, {
-  Article,
-  NavBar,
-  NavItem,
-} from '../../components/MainLayout/MainLayout';
-import AnimatedTextSection, {
-  H1,
-  P,
-} from '../../components/MainLayout/AnimatedTextSection';
+import Layout from '../../components/MainLayout';
+import Article from '../../components/Article';
+import Text, { H1, P } from '../../components/AnimatedTextSection';
 import ImageSection from '../../components/ImageSection';
-import AnimatedImage from '../../components/MainLayout/AnimatedImage';
+import AnimatedImage from '../../components/AnimatedImage';
+import NavBar from '../../components/NavBar';
+import NavItem from '../../components/NavItem';
 import Icon from '../../components/Icon';
 import { garten, altlengbach, summary } from '../../pagesByName';
 
@@ -23,7 +19,7 @@ const Altlengbach = ({
 }) => (
   <Layout>
     <Article>
-      <AnimatedTextSection>
+      <Text>
         <H1>Die Umgebung</H1>
         <P>
           Der Ortskern von Altlengbach befindet sich in Gehweite vom Landhaus.
@@ -54,7 +50,7 @@ const Altlengbach = ({
             Zur Website von Altlengbach
           </a>
         </P>
-      </AnimatedTextSection>
+      </Text>
 
       <ImageSection>
         <Link to={next.path}>
