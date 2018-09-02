@@ -1,5 +1,6 @@
 import styled from 'react-emotion';
 import { Link } from 'gatsby';
+import posed from 'react-pose';
 
 import AnimatedPage from './AnimatedPage';
 
@@ -48,7 +49,16 @@ export const Image = styled('aside')`
   background-color: rgba(85, 107, 49, 0.1);
 `;
 
-export const MainNav = styled('nav')`
+const AnimatedNav = posed.div({
+  enteringLeft: { opacity: 0 },
+  enterLeft: { opacity: 1 },
+  // exitLeft: { opacity: 0, delay: 150 },
+  // enteringRight: { opacity: 0 },
+  // enterRight: { opacity: 1, delay: 300 },
+  exitRight: { opacity: 0, delay: 150 },
+});
+
+export const MainNav = styled(AnimatedNav)`
   display: flex;
   align-items: stretch;
   justify-content: stretch;
