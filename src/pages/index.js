@@ -10,6 +10,7 @@ import NavBar from '../components/NavBar';
 import NavItem from '../components/NavItem';
 import Icon from '../components/Icon';
 import { kueche, index } from '../pagesByName';
+import AnimatedNavText from '../components/AnimatedNavText';
 
 const IndexPage = ({ data, next = kueche, current = index }) => (
   <Layout>
@@ -40,7 +41,8 @@ const IndexPage = ({ data, next = kueche, current = index }) => (
 
     <NavBar>
       <NavItem to={next.path}>
-        Tour starten <Icon icon="right" />
+        <AnimatedNavText>Tour starten </AnimatedNavText>
+        <Icon icon="right" />
       </NavItem>
     </NavBar>
   </Layout>

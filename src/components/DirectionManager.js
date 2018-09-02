@@ -8,6 +8,7 @@ const plans = plansPages.map(({ path }) => path);
 const isPlans = pathname => plans.includes(pathname);
 const isContact = pathname => pathname.startsWith('/contact');
 const isTour = pathname => tour.includes(pathname);
+const isLast = (pathname, list) => list.indexOf(pathname) === list.length - 1;
 
 const getTourDirection = (current, previous) =>
   tour.indexOf(current) >= tour.indexOf(previous) ? 'Next' : 'Previous';
@@ -23,9 +24,8 @@ const getDirection = (current, previous) => {
   if (isPlans(current) && isPlans(previous)) {
     return getPlansDirection(current, previous);
   }
-  if (isContact(current) && tour.indexOf(previous) === tour.length - 1) {
-    return 'Right';
-  }
+  if (isContact(current) && isLast(previous, tour)) return 'Right';
+  if (isLast(current, tour) && isContact(previous)) return 'Left';
   if (isContact(current)) return 'Left';
   if (isContact(previous)) return 'Right';
   if (isPlans(current) && !isPlans(previous)) return 'Down';

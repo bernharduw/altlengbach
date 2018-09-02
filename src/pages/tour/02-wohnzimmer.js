@@ -8,6 +8,7 @@ import ImageSection from '../../components/ImageSection';
 import AnimatedImage from '../../components/AnimatedImage';
 import NavBar from '../../components/NavBar';
 import NavItem from '../../components/NavItem';
+import AnimatedNavText from '../../components/AnimatedNavText';
 import Icon from '../../components/Icon';
 import { kueche, wohnzimmer, galerie } from '../../pagesByName';
 
@@ -46,7 +47,8 @@ const Wohnzimmer = ({
         <Icon icon="left" />
       </NavItem>
       <NavItem to={next.path} title={next.title}>
-        {next.name} <Icon icon="right" />
+        <AnimatedNavText>{next.name} </AnimatedNavText>
+        <Icon icon="right" />
       </NavItem>
     </NavBar>
   </Layout>

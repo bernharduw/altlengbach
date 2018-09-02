@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
+import posed from 'react-pose';
 
 import NavItem from './NavItem';
 import Icon from './Icon';
@@ -23,7 +24,19 @@ const Contact = styled('div')`
   justify-content: space-between;
 `;
 
-const Nav = styled('div')`
+const transparent = 'rgba(85, 107, 47, 0)';
+const darkolivegreen = 'rgba(85, 107, 47, 1)';
+
+const AnimatedNav = posed.div({
+  enteringNext: { backgroundColor: transparent },
+  enterNext: { backgroundColor: darkolivegreen, delay: 300 },
+  exitNext: { backgroundColor: darkolivegreen, delay: 600 },
+  enteringPrevious: { backgroundColor: transparent },
+  enterPrevious: { backgroundColor: darkolivegreen, delay: 300 },
+  exitPrevious: { backgroundColor: darkolivegreen, delay: 600 },
+});
+
+const Nav = styled(AnimatedNav)`
   flex: 1;
   display: flex;
   justify-content: stretch;
