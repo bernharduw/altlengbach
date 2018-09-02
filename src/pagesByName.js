@@ -71,6 +71,26 @@ export const plans = {
   title: 'Pläne',
   name: 'Pläne',
 };
+export const dachboden = {
+  path: '/floor-plans/dachboden',
+  title: 'Der Dachboden',
+  name: 'Dachboden',
+};
+export const obergeschoss = {
+  path: '/floor-plans/obergeschoss',
+  title: 'Das Obergeschoss',
+  name: 'Obergeschoss',
+};
+export const erdgeschoss = {
+  path: '/floor-plans/erdgeschoss',
+  title: 'Das Erdgeschoss',
+  name: 'Erdgeschoss',
+};
+export const keller = {
+  path: '/floor-plans/keller',
+  title: 'Der Keller',
+  name: 'Keller',
+};
 
 export const tourPages = [
   index,
@@ -86,4 +106,4 @@ export const tourPages = [
   summary,
 ];
 
-export const plansPages = [plans];
+export const plansPages = [plans, dachboden, obergeschoss, erdgeschoss, keller];
