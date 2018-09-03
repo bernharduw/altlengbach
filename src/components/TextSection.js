@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
 import { Link } from 'gatsby';
-import Icon from './Icon';
+import { FadingIcon } from './AnimatedNavItem';
 
 const padding = css`
   padding: 1em;
@@ -52,7 +52,7 @@ const TextSection = ({ hideHome, children, ...props }) => (
   <Main {...props}>
     {hideHome ? null : (
       <HomeNav to="/" title="Startseite">
-        <Icon icon="home" />
+        <FadingIcon icon="home" />
       </HomeNav>
     )}
     <MainContent>

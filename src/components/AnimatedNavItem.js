@@ -12,8 +12,12 @@ const transition = {
 };
 
 const left = {
-  // x: 'calc(100% - 61.81vw + 72px)',
   x: '-61.81vw',
+  opacity: 0,
+  transition,
+};
+const above = {
+  y: '-100%',
   opacity: 0,
   transition,
 };
@@ -35,21 +39,22 @@ const AnimatedNavText = styled(
     enter: normal,
     enteringNext: below,
     enterNext: normal,
-    exitNext: {
-      ...left,
-      transition: {
-        ...transition,
-        opacity: { delay: 1000 },
-        x: { ...transition.x, delay: 100 },
-      },
-    },
-    enteringPrevious: left,
+    // exitNext: {
+    //   ...left,
+    //   transition: {
+    //     ...transition,
+    //     opacity: { delay: 1000 },
+    //     x: { ...transition.x, delay: 100 },
+    //   },
+    // },
+    exitNext: above,
+    enteringPrevious: above,
     enterPrevious: normal,
     exitPrevious: below,
-    enteringLevelUp: left,
+    enteringLevelUp: above,
     enterLevelUp: normal,
     exitLevelUp: below,
-    enteringLevelDown: left,
+    enteringLevelDown: above,
     enterLevelDown: normal,
     exitLevelDown: below,
   })
@@ -62,14 +67,14 @@ const rotatedNormal = { rotate: '0deg', transition };
 const rotatedRight = { rotate: '180deg', transition };
 const AnimatedIcon = styled(
   posed.span({
-    entering: rotatedLeft,
-    enter: rotatedNormal,
-    enteringNext: rotatedLeft,
-    enterNext: rotatedNormal,
-    exitNext: rotatedRight,
-    enteringPrevious: rotatedLeft,
-    enterPrevious: { ...rotatedNormal, delay: 300 },
-    exitPrevious: rotatedRight,
+    // entering: rotatedLeft,
+    // enter: rotatedNormal,
+    // enteringNext: rotatedLeft,
+    // enterNext: rotatedNormal,
+    // exitNext: rotatedRight,
+    // enteringPrevious: rotatedLeft,
+    // enterPrevious: { ...rotatedNormal, delay: 300 },
+    // exitPrevious: rotatedRight,
   })
 )`
   display: inline-block;
@@ -83,11 +88,13 @@ const Fade = styled(
     entering: below,
     enter: { ...normal, delay: 50 },
     enteringNext: transparent,
-    enterNext: { ...opaque, delay: 400 },
-    exitNext: slightlyLeft,
-    enteringPrevious: slightlyLeft,
-    enterPrevious: { ...opaque, delay: 600 },
-    exitPrevious: { ...transparent, delay: 250, transition: { duration: 100 } },
+    enterNext: opaque,
+    // enterNext: { ...opaque, delay: 400 },
+    // exitNext: slightlyLeft,
+    // enteringPrevious: slightlyLeft,
+    // enterPrevious: { ...opaque, delay: 600 },
+    // exitPrevious: { ...transparent, delay: 250, transition: { duration: 100 } },
+    exitPrevious: transparent,
   })
 )`
   display: inline-block;
