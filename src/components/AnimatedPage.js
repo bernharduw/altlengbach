@@ -1,6 +1,6 @@
 import posed from 'react-pose';
 
-const transition = { ease: 'easeOut' };
+const transition = { ease: 'easeOut', duration: 500 };
 const right = { x: 'calc(100vw - 48px)', transition };
 const center = { x: '0vw', y: '0vh', transition };
 const left = { x: 'calc(-100vw + 48px)', transition };

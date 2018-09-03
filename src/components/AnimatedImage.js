@@ -3,7 +3,7 @@ import posed from 'react-pose';
 import FluidImage from './FluidImage';
 
 const transition = {
-  x: { ease: 'easeOut' },
+  x: { ease: 'easeOut', duration: 500 },
   scale: { delay: 250, duration: 700 },
 };
 const transparent = { opacity: 0, scale: 1.025, transition };
