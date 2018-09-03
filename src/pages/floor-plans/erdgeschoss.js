@@ -2,27 +2,19 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Image from 'gatsby-image';
 
-import Layout, {
-  Article,
-  TextSection,
-  ImageSection,
-  NavBar,
-  NavItem,
-} from '../../components/PlanLayout';
-import Icon from '../../components/Icon';
-import { plans } from '../../pagesByName';
+import Layout from '../../components/PlanLayout';
+import Article from '../../components/Article';
+import NavBar from '../../components/NavBar';
+import Text, { H1 } from '../../components/AnimatedTextSection';
+import ImageSection from '../../components/ImageSection';
 
-const Erdgeschoss = ({ data, back = plans }) => (
+const Erdgeschoss = ({ data }) => (
   <Layout>
-    <NavBar>
-      <NavItem to={back.path} title={back.name}>
-        <Icon icon="up" /> Zurück
-      </NavItem>
-    </NavBar>
+    <NavBar />
 
     <Article>
-      <TextSection>
-        <h1>Erdgeschoss</h1>
+      <Text hideHome>
+        <H1>Erdgeschoss</H1>
         <ul>
           <li>
             <Link to="/floor-plans/dachboden">Dachboden</Link>
@@ -40,7 +32,7 @@ const Erdgeschoss = ({ data, back = plans }) => (
             <Link to="/floor-plans/grundstueck">Grundstück</Link>
           </li> */}
         </ul>
-      </TextSection>
+      </Text>
 
       <ImageSection>
         <Image fixed={data.eg.childImageSharp.fixed} />

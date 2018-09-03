@@ -1,7 +1,7 @@
 export const index = { path: '/', title: 'Außenansicht', name: 'Startseite' };
 
 export const kueche = {
-  path: '/tour/01-kueche/',
+  path: '/tour/01-kueche',
   title: 'Die Küche',
   name: 'Küche',
 };
@@ -71,3 +71,39 @@ export const plans = {
   title: 'Pläne',
   name: 'Pläne',
 };
+export const dachboden = {
+  path: '/floor-plans/dachboden',
+  title: 'Der Dachboden',
+  name: 'Dachboden',
+};
+export const obergeschoss = {
+  path: '/floor-plans/obergeschoss',
+  title: 'Das Obergeschoss',
+  name: 'Obergeschoss',
+};
+export const erdgeschoss = {
+  path: '/floor-plans/erdgeschoss',
+  title: 'Das Erdgeschoss',
+  name: 'Erdgeschoss',
+};
+export const keller = {
+  path: '/floor-plans/keller',
+  title: 'Der Keller',
+  name: 'Keller',
+};
+
+export const tourPages = [
+  index,
+  kueche,
+  wohnzimmer,
+  galerie,
+  masterbedroom,
+  balkon,
+  garage,
+  stadl,
+  garten,
+  altlengbach,
+  summary,
+];
+
+export const plansPages = [plans, dachboden, obergeschoss, erdgeschoss, keller];

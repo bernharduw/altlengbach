@@ -1,13 +1,8 @@
-import React from 'react';
 import styled from 'react-emotion';
 import { Link } from 'gatsby';
-import './globalStyle';
+import posed from 'react-pose';
 
-const Page = styled('div')`
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-`;
+import AnimatedPage from './AnimatedPage';
 
 export const Main = styled('main')`
   flex: 1;
@@ -54,7 +49,16 @@ export const Image = styled('aside')`
   background-color: rgba(85, 107, 49, 0.1);
 `;
 
-export const MainNav = styled('nav')`
+const AnimatedNav = posed.div({
+  enteringLeft: { opacity: 0 },
+  enterLeft: { opacity: 1 },
+  // exitLeft: { opacity: 0, delay: 150 },
+  // enteringRight: { opacity: 0 },
+  // enterRight: { opacity: 1, delay: 300 },
+  exitRight: { opacity: 0, delay: 150 },
+});
+
+export const MainNav = styled(AnimatedNav)`
   display: flex;
   align-items: stretch;
   justify-content: stretch;
@@ -90,6 +94,10 @@ export const NavItem = styled(Link)`
 
 export const NavItemExternal = NavItem.withComponent('a');
 
-const Layout = ({ children }) => <Page>{children}</Page>;
+const Layout = styled(AnimatedPage)`
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+`;
 
 export default Layout;

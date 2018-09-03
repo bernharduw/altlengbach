@@ -1,15 +1,15 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
-import Layout, {
-  Article,
-  TextSection,
-  ImageSection,
-  NavBar,
-  NavItem,
-} from '../../components/Layout';
-import FluidImage from '../../components/FluidImage';
-import Icon from '../../components/Icon';
+import Layout from '../../components/MainLayout';
+import Article from '../../components/Article';
+import Text, { H1, P } from '../../components/AnimatedTextSection';
+import ImageSection from '../../components/ImageSection';
+import AnimatedImage from '../../components/AnimatedImage';
+import NavBar from '../../components/NavBar';
+import NavItem from '../../components/NavItem';
+import AnimatedNavItem, { FadingIcon } from '../../components/AnimatedNavItem';
 import { garten, altlengbach, summary } from '../../pagesByName';
 
 const Altlengbach = ({
@@ -19,54 +19,62 @@ const Altlengbach = ({
   next = summary,
 }) => (
   <Layout>
+    <Helmet>
+      <title>{current.title}</title>
+    </Helmet>
+
     <Article>
-      <TextSection>
-        <h1>Die Umgebung</h1>
-        <p>
+      <Text>
+        <H1>Die Umgebung</H1>
+        <P>
           Der Ortskern von Altlengbach befindet sich in Gehweite vom Landhaus.
           Zwei Kindergärten, eine Volksschule und eine Bücherei direkt im Ort
           sowie eine Mittelschule und eine Musikschule in der unmittelbaren Nähe
           sorgen für die{' '}
           <a href="http://www.altlengbach.gv.at/Leben/Kinder_Betreuung/Allgemeine_Information">
             Bildung
-          </a>.
-        </p>
-        <p>
+          </a>
+          .
+        </P>
+        <P>
           Zwei praktische Ärte und eine große Apotheke befinden sich direkt im
           Ort, außerdem ein Zahnarzt und ein Tierarzt.
-        </p>
-        <p>
+        </P>
+        <P>
           Auch kulinarisch kommen Sie voll auf Ihre Kosten: Gemütliche
           Gasthäuser, Cafés und Heurigen in der Umgebung sowie zwei
           Hotelrestaurants laden zu genussvollen Stunden ein.
-        </p>
-        <p>
+        </P>
+        <P>
           Die Autobahnauffahrt A1 Altlengbach ist 5 Minuten entfernt, bis St.
           Pölten benötigt man 15 Minuten mit dem Auto, bis zur Stadtgrenze von
           Wien 20 Minuten. Der Bahnhof Eichgraben-Altlengbach ist mit dem Bus
           oder per PKW in 5 Minuten erreichbar.
-        </p>
-        <a href="http://www.altlengbach.gv.at/">Zur Website von Altlengbach</a>
-      </TextSection>
+        </P>
+        <P>
+          <a href="http://www.altlengbach.gv.at/">
+            Zur Website von Altlengbach
+          </a>
+        </P>
+      </Text>
 
       <ImageSection>
-        <Link to={next.path}>
-          <FluidImage
-            title={current.title}
-            alt={current.name}
-            file={data.image}
-          />
-        </Link>
+        <AnimatedImage
+          to={next.path}
+          title={current.title}
+          alt={current.name}
+          file={data.image}
+        />
       </ImageSection>
     </Article>
 
     <NavBar>
       <NavItem to={previous.path} title={previous.name}>
-        <Icon icon="left" />
+        <FadingIcon icon="left" />
       </NavItem>
-      <NavItem to={next.path} title={next.title}>
-        {next.name} <Icon icon="right" />
-      </NavItem>
+      <AnimatedNavItem to={next.path} iconRight="right" title={next.title}>
+        {next.name}{' '}
+      </AnimatedNavItem>
     </NavBar>
   </Layout>
 );
