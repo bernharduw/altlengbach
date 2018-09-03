@@ -8,8 +8,7 @@ import ImageSection from '../../components/ImageSection';
 import AnimatedImage from '../../components/AnimatedImage';
 import NavBar from '../../components/NavBar';
 import NavItem from '../../components/NavItem';
-import AnimatedNavText from '../../components/AnimatedNavText';
-import Icon from '../../components/Icon';
+import AnimatedNavItem, { FadingIcon } from '../../components/AnimatedNavItem';
 import { altlengbach, summary, index, contact } from '../../pagesByName';
 
 const Summary = ({
@@ -55,12 +54,11 @@ const Summary = ({
 
     <NavBar>
       <NavItem to={previous.path} title={previous.name}>
-        <Icon icon="left" />
+        <FadingIcon icon="left" />
       </NavItem>
-      <NavItem to={next.path} title={next.title}>
-        <AnimatedNavText>{next.name} </AnimatedNavText>
-        <Icon icon="right" />
-      </NavItem>
+      <AnimatedNavItem to={next.path} iconRight="right" title={next.title}>
+        {next.name}{' '}
+      </AnimatedNavItem>
     </NavBar>
   </Layout>
 );

@@ -7,10 +7,8 @@ import Text, { H1, P } from '../components/AnimatedTextSection';
 import ImageSection from '../components/ImageSection';
 import AnimatedImage from '../components/AnimatedImage';
 import NavBar from '../components/NavBar';
-import NavItem from '../components/NavItem';
-import Icon from '../components/Icon';
 import { kueche, index } from '../pagesByName';
-import AnimatedNavText from '../components/AnimatedNavText';
+import AnimatedNavItem from '../components/AnimatedNavItem';
 
 const IndexPage = ({ data, next = kueche, current = index }) => (
   <Layout>
@@ -40,10 +38,9 @@ const IndexPage = ({ data, next = kueche, current = index }) => (
     </Article>
 
     <NavBar>
-      <NavItem to={next.path}>
-        <AnimatedNavText>Tour starten </AnimatedNavText>
-        <Icon icon="right" />
-      </NavItem>
+      <AnimatedNavItem to={next.path} iconRight="right">
+        Tour starten{' '}
+      </AnimatedNavItem>
     </NavBar>
   </Layout>
 );
