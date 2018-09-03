@@ -1,25 +1,6 @@
 import React from 'react';
-import posed, { PoseGroup } from 'react-pose';
-import DirectionManager from './src/components/DirectionManager';
+import TransitionContainer from './src/components/TransitionContainer';
 
-const PageTransition = posed.div();
-
-export const replaceComponentRenderer = ({ props, ...other }) => {
-  const { component: Component } = props.pageResources;
-  return (
-    <DirectionManager pathname={props.location.pathname}>
-      {({ getPoseName }) => (
-        <PoseGroup
-          animateOnMount
-          preEnterPose={getPoseName('entering')}
-          enterPose={getPoseName('enter')}
-          exitPose={getPoseName('exit')}
-        >
-          <PageTransition key={props.location.key}>
-            <Component {...props} />
-          </PageTransition>
-        </PoseGroup>
-      )}
-    </DirectionManager>
-  );
-};
+export const wrapPageElement = ({ element, props }) => (
+  <TransitionContainer location={props.location}>{element}</TransitionContainer>
+);

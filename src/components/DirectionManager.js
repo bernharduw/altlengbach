@@ -33,7 +33,7 @@ const getDirection = (current, previous) => {
   return 'Next';
 };
 
-export default class DirectionManager extends React.PureComponent {
+export default class DirectionManager extends React.Component {
   state = {
     previousPathname: '',
     pathname: '',
