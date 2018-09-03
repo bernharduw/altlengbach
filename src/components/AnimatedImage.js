@@ -6,11 +6,11 @@ const transition = {
   x: { ease: 'easeOut', duration: 500 },
   scale: { delay: 250, duration: 700 },
 };
-const transparent = { opacity: 0, scale: 1.025, transition };
+const transparent = { opacity: 0, scale: 1.03, transition };
 const opaque = { opacity: 1, scale: 1, transition };
-const right = { x: '95%', scale: 1.025, transition };
+const right = { x: '100%', scale: 1.03, transition };
 const center = { x: '0%', scale: 1, transition };
-const left = { x: '-95%', scale: 1.025, transition };
+const left = { x: '-100%', scale: 1.03, transition };
 
 const AnimatedImageWrapper = posed.div({
   entering: transparent,
