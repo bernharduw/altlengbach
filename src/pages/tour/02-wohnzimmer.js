@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
 import Layout from '../../components/MainLayout';
 import Article from '../../components/Article';
@@ -18,6 +19,10 @@ const Wohnzimmer = ({
   next = galerie,
 }) => (
   <Layout>
+    <Helmet>
+      <title>{current.title}</title>
+      <link rel="prerender" href={next.path} />
+    </Helmet>
     <Article>
       <Text>
         <H1>Das Wohnzimmer</H1>
@@ -40,7 +45,6 @@ const Wohnzimmer = ({
         />
       </ImageSection>
     </Article>
-
     <NavBar>
       <NavItem to={previous.path} title={previous.name}>
         <FadingIcon icon="left" />

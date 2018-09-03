@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
 import Layout from '../../components/MainLayout';
 import Article from '../../components/Article';
@@ -18,6 +19,11 @@ const Altlengbach = ({
   next = summary,
 }) => (
   <Layout>
+    <Helmet>
+      <title>{current.title}</title>
+      <link rel="prerender" href={next.path} />
+    </Helmet>
+
     <Article>
       <Text>
         <H1>Die Umgebung</H1>
@@ -28,7 +34,8 @@ const Altlengbach = ({
           sorgen für die{' '}
           <a href="http://www.altlengbach.gv.at/Leben/Kinder_Betreuung/Allgemeine_Information">
             Bildung
-          </a>.
+          </a>
+          .
         </P>
         <P>
           Zwei praktische Ärte und eine große Apotheke befinden sich direkt im

@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
 import Layout from '../../components/MainLayout';
 import Article from '../../components/Article';
@@ -13,6 +14,11 @@ import { garage, stadl, garten } from '../../pagesByName';
 
 const Stadl = ({ data, previous = garage, current = stadl, next = garten }) => (
   <Layout>
+    <Helmet>
+      <title>{current.title}</title>
+      <link rel="prerender" href={next.path} />
+    </Helmet>
+
     <Article>
       <Text>
         <H1>Der Stadl</H1>

@@ -100,8 +100,8 @@ const Fade = styled(
   display: inline-block;
 `;
 
-const AnimatedNavItem = ({ to, title, iconLeft, iconRight, children }) => (
-  <NavItem to={to} title={title}>
+const AnimatedNavItem = ({ iconLeft, iconRight, children, ...rest }) => (
+  <NavItem {...rest}>
     <AnimatedNavText>
       {iconLeft && (
         <AnimatedIcon>

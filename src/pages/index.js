@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
 import Layout from '../components/MainLayout';
 import Article from '../components/Article';
@@ -12,6 +13,11 @@ import AnimatedNavItem from '../components/AnimatedNavItem';
 
 const IndexPage = ({ data, next = kueche, current = index }) => (
   <Layout>
+    <Helmet>
+      <title>{current.title}</title>
+      <link rel="prerender" href={next.path} />
+    </Helmet>
+
     <Article>
       <Text hideHome>
         <H1>Ein charmanter Landsitz im Wienerwald</H1>
