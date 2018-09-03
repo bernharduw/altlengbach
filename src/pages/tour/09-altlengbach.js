@@ -21,7 +21,6 @@ const Altlengbach = ({
   <Layout>
     <Helmet>
       <title>{current.title}</title>
-      <link rel="prerender" href={next.path} />
     </Helmet>
 
     <Article>
