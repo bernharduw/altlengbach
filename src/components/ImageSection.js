@@ -4,8 +4,10 @@ const ImageSection = styled('aside')`
   flex: 1;
   width: 100%;
   height: 100%;
-  background-color: #f0f1ed;
-  overflow: hidden;
+
+  @media (orientation: landscape) {
+    overflow: hidden;
+  }
 
   // Fix the gatsby image.
   .gatsby-image-wrapper,
@@ -16,6 +18,11 @@ const ImageSection = styled('aside')`
   .gatsby-image-wrapper div:first-child {
     height: 100%;
     padding-bottom: 0 !important;
+  }
+
+  // Fix the SVG background.
+  .gatsby-image-wrapper img {
+    background-color: #f0f1ed;
   }
 `;
 
