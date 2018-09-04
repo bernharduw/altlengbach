@@ -11,11 +11,11 @@ const transition = {
   rotate: { duration: 500 },
 };
 
-const left = {
-  x: '-61.81vw',
-  opacity: 0,
-  transition,
-};
+// const left = {
+//   x: '-61.81vw',
+//   opacity: 0,
+//   transition,
+// };
 const above = {
   y: '-100%',
   opacity: 0,
@@ -62,9 +62,9 @@ const AnimatedNavText = styled(
   display: inline-block;
 `;
 
-const rotatedLeft = { rotate: '-180deg', transition };
-const rotatedNormal = { rotate: '0deg', transition };
-const rotatedRight = { rotate: '180deg', transition };
+// const rotatedLeft = { rotate: '-180deg', transition };
+// const rotatedNormal = { rotate: '0deg', transition };
+// const rotatedRight = { rotate: '180deg', transition };
 const AnimatedIcon = styled(
   posed.span({
     // entering: rotatedLeft,
@@ -82,7 +82,7 @@ const AnimatedIcon = styled(
 
 const transparent = { opacity: 0, transition };
 const opaque = { opacity: 1, x: 0, transition };
-const slightlyLeft = { ...transparent, x: -20 };
+// const slightlyLeft = { ...transparent, x: -20 };
 const Fade = styled(
   posed.span({
     entering: below,
