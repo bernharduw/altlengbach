@@ -7,10 +7,12 @@ const NavItem = styled(Link)`
   text-align: center;
   flex: 1;
   text-transform: uppercase;
+  white-space: nowrap;
 
   &:first-child {
     text-align: left;
   }
+
   &:last-child {
     text-align: right;
   }

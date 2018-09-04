@@ -628,32 +628,3 @@ pre tt:after {
   }
 }
 `;
-
-// Adaptations
-/*
-injectGlobal`
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Playfair+Display:700');
-
-@media (max-width: 640px) {
-  html {
-    font-size: 87.5%;
-  }
-}
-
-@media (min-width: 1280px) {
-  html {
-    font-size: 150%;
-  }
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  color: darkolivegreen;
-}
-`;
-*/

@@ -10,6 +10,7 @@ const NavOuter = styled('nav')`
   display: flex;
   z-index: 1;
   color: #fff;
+  flex-wrap: wrap;
 
   a {
     color: #fff;
@@ -18,6 +19,10 @@ const NavOuter = styled('nav')`
 `;
 
 const Contact = styled('div')`
+  @media (max-width: 640px) and (orientation: portrait) {
+    flex: 0 0 100%;
+  }
+
   ${goldenRatio};
   background-color: #7c8c62;
   display: flex;
@@ -41,6 +46,10 @@ const Nav = styled(AnimatedNav)`
   display: flex;
   justify-content: stretch;
   background-color: darkolivegreen;
+
+  > :first-child {
+    flex: auto;
+  }
 `;
 
 const NavBar = ({
