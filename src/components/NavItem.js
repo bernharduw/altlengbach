@@ -8,6 +8,7 @@ const NavItem = styled(Link)`
   flex: 1;
   text-transform: uppercase;
   white-space: nowrap;
+  max-width: 100%;
 
   &:first-child {
     text-align: left;

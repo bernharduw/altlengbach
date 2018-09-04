@@ -58,7 +58,7 @@ const Summary = ({ data, previous = index, current = contact }) => (
           href="http://www.immobilien86.at/objektdetail/2575082"
           title="Landhaus auf Immobilien86"
         >
-          Zur Objektseite auf www.immobilien86.at
+          Objekt auf immobilien86.at
         </NavItemExternal>
       </SubNav>
     </Main>

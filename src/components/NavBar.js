@@ -10,7 +10,6 @@ const NavOuter = styled('nav')`
   display: flex;
   z-index: 1;
   color: #fff;
-  flex-wrap: wrap;
 
   a {
     color: #fff;
@@ -20,7 +19,13 @@ const NavOuter = styled('nav')`
 
 const Contact = styled('div')`
   @media (max-width: 640px) and (orientation: portrait) {
-    flex: 0 0 100%;
+    // Fix for displaying only the icon.
+    font-size: 0;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 
   ${goldenRatio};
