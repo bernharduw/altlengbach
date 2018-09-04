@@ -24,7 +24,7 @@ export const query = graphql`
     name
     childImageSharp {
       fluid(maxWidth: 1280) {
-        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
@@ -32,7 +32,7 @@ export const query = graphql`
   fragment PlanFragment on File {
     name
     childImageSharp {
-      fixed(width: 400) {
+      fixed(width: 400, quality: 90) {
         ...GatsbyImageSharpFixed_withWebp_tracedSVG
       }
     }
