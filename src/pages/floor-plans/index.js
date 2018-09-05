@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby';
 import Image from 'gatsby-image';
 import styled from 'react-emotion';
 
-import Layout from '../../components/PlanLayout';
+import Layout from '../../components/MainLayout';
 import Article from '../../components/Article';
 import NavBar from '../../components/NavBar';
 import NavItem from '../../components/NavItem';

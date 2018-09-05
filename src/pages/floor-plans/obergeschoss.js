@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Image from 'gatsby-image';
 
-import Layout from '../../components/PlanLayout';
+import Layout from '../../components/MainLayout';
 import Article from '../../components/Article';
 import NavBar from '../../components/NavBar';
 import Text, { H1 } from '../../components/AnimatedTextSection';
