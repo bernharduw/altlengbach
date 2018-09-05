@@ -25,6 +25,19 @@ const Main = styled('main')`
   ${goldenRatio};
   display: flex;
   flex-direction: column;
+
+  // Display a small fading gradient at the bottom do signify there's more content.
+  position: relative;
+
+  ::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1em;
+    background-image: linear-gradient(transparent, white);
+  }
 `;
 
 const MainContent = styled('div')`
