@@ -49,20 +49,6 @@ const AnimatedNavText = styled(
   display: inline-block;
 `;
 
-const transparent = { opacity: 0, transition };
-const opaque = { opacity: 1, x: 0, transition };
-const Fade = styled(
-  posed.span({
-    entering: below,
-    enter: { ...normal, delay: 50 },
-    enteringNext: transparent,
-    enterNext: opaque,
-    exitPrevious: transparent,
-  })
-)`
-  display: inline-block;
-`;
-
 const AnimatedNavItem = ({ iconLeft, iconRight, children, ...rest }) => (
   <NavItem {...rest}>
     <AnimatedNavText>
@@ -74,6 +60,21 @@ const AnimatedNavItem = ({ iconLeft, iconRight, children, ...rest }) => (
 );
 
 export default AnimatedNavItem;
+
+const transparent = { opacity: 0, transition };
+const opaque = { opacity: 1, x: 0, transition };
+const Fade = styled(
+  posed.div({
+    entering: below,
+    enter: { ...normal, delay: 50 },
+    enteringNext: transparent,
+    enterNext: opaque,
+    exitNext: { ...transparent, delay: 200 },
+    exitPrevious: transparent,
+  })
+)`
+  display: inline-block;
+`;
 
 export const FadingIcon = props => (
   <Fade>

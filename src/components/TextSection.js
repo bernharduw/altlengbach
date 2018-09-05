@@ -70,6 +70,7 @@ const HomeNav = styled(Link)`
   display: block;
   text-align: center;
   padding: 0.5rem;
+  z-index: 1; // So the fading animation is on top of the white gradient below.
 `;
 
 const TextSection = ({ hideHome, children, ...props }) => (
