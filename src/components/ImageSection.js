@@ -4,15 +4,15 @@ const ImageSection = styled('aside')`
   flex: 1;
   width: 100%;
 
+  // Make the gatsby image 100% of the surrounding content.
+  .gatsby-image-wrapper,
+  .gatsby-image-outer-wrapper {
+    height: 100%;
+  }
+
   @media (orientation: landscape) {
     overflow: hidden;
     height: 100%;
-
-    // Fix the gatsby image.
-    .gatsby-image-wrapper,
-    .gatsby-image-outer-wrapper {
-      height: 100%;
-    }
 
     .gatsby-image-wrapper div:first-child {
       height: 100%;
