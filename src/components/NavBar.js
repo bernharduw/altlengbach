@@ -18,7 +18,7 @@ const NavOuter = styled('nav')`
 `;
 
 const Contact = styled('div')`
-  @media (max-width: 640px) and (orientation: portrait) {
+  @media (max-width: 640px) {
     // Fix for displaying only the icon.
     font-size: 0;
 
