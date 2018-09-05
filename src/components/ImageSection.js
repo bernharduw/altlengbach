@@ -1,33 +1,35 @@
-import React from 'react';
-import FluidImage from '../components/FluidImage';
 import styled from 'react-emotion';
 
-const Article = styled('article')`
-  display: flex;
-  align-items: center;
-`;
-
-const Main = styled('main')`
-  flex: 0 38.1966%;
-  padding: 16px;
-`;
-
-const Aside = styled('aside')`
+const ImageSection = styled('aside')`
   flex: 1;
   width: 100%;
 
-  .gatsby-image-wrapper div:first-child {
-    padding-bottom: 100vh !important;
+  // Make the gatsby image 100% of the surrounding content.
+  .gatsby-image-wrapper,
+  .gatsby-image-outer-wrapper {
+    height: 100%;
+  }
+
+  // Blur the inline placeholder a bit more than the default.
+  .gatsby-image-wrapper img:first-of-type {
+    filter: blur(4px);
+  }
+
+  @media (orientation: landscape) {
+    overflow: hidden;
+    height: 100%;
+
+    // Let the spacer occupy 100% height.
+    .gatsby-image-wrapper div:first-child {
+      height: 100%;
+      padding-bottom: 0 !important;
+    }
+  }
+
+  // Remove the margin set by the defaultStyle.
+  .gatsby-image-wrapper img {
+    margin-bottom: 0;
   }
 `;
-
-const ImageSection = ({ file, title, alt, children }) => (
-  <Article>
-    <Main>{children}</Main>
-    <Aside>
-      <FluidImage title={title} alt={alt} file={file} />
-    </Aside>
-  </Article>
-);
 
 export default ImageSection;

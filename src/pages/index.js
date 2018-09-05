@@ -1,49 +1,51 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
-import Layout, {
-  Article,
-  TextSection,
-  ImageSection,
-  NavBar,
-  NavItem,
-} from '../components/Layout';
-import FluidImage from '../components/FluidImage';
-import Icon from '../components/Icon';
+import Layout from '../components/MainLayout';
+import Article from '../components/Article';
+import Text, { H1, P } from '../components/AnimatedTextSection';
+import ImageSection from '../components/ImageSection';
+import AnimatedImage from '../components/AnimatedImage';
+import NavBar from '../components/NavBar';
 import { kueche, index } from '../pagesByName';
+import AnimatedNavItem from '../components/AnimatedNavItem';
 
 const IndexPage = ({ data, next = kueche, current = index }) => (
   <Layout>
+    <Helmet>
+      <title>{current.title}</title>
+    </Helmet>
+
     <Article>
-      <TextSection isHome>
-        <h1>Ein charmanter Landsitz im Wienerwald</h1>
-        <p>
+      <Text hideHome>
+        <H1>Ein charmanter Landsitz im Wienerwald</H1>
+        <P>
           Zum Verkauf kommt ein charmantes, geräumiges Landhaus in Grünruhelage
           mit unverbaubarem Blick in der Wienerwald-Gemeinde Altlengbach.{' '}
-        </p>
-        <p>
+        </P>
+        <P>
           Auf einer Grundstücksfläche von insgesamt 4.388m2 bietet ein großes
           Haus mit über 200m2 Wohnfläche, einem großem Garten und einem eigenen
           Waldstück viel Platz für eine große Familie.
-        </p>
+        </P>
         {/* <Button to={next.path}>Tour durchs Haus starten</Button> */}
-      </TextSection>
+      </Text>
 
       <ImageSection>
-        <Link to={next.path}>
-          <FluidImage
-            title={current.title}
-            alt="Haus von außen"
-            file={data.image}
-          />
-        </Link>
+        <AnimatedImage
+          to={next.path}
+          title={current.title}
+          alt="Haus von außen"
+          file={data.image}
+        />
       </ImageSection>
     </Article>
 
     <NavBar>
-      <NavItem to={next.path}>
-        Tour starten <Icon icon="right" />
-      </NavItem>
+      <AnimatedNavItem to={next.path} iconRight="right">
+        Tour starten{' '}
+      </AnimatedNavItem>
     </NavBar>
   </Layout>
 );

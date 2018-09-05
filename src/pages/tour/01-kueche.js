@@ -1,15 +1,15 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
-import Layout, {
-  Article,
-  TextSection,
-  ImageSection,
-  NavBar,
-  NavItem,
-} from '../../components/Layout';
-import FluidImage from '../../components/FluidImage';
-import Icon from '../../components/Icon';
+import Layout from '../../components/MainLayout';
+import Article from '../../components/Article';
+import Text, { H1, P } from '../../components/AnimatedTextSection';
+import ImageSection from '../../components/ImageSection';
+import AnimatedImage from '../../components/AnimatedImage';
+import NavBar from '../../components/NavBar';
+import NavItem from '../../components/NavItem';
+import AnimatedNavItem, { FadingIcon } from '../../components/AnimatedNavItem';
 import { index, kueche, wohnzimmer } from '../../pagesByName';
 
 const Kueche = ({
@@ -19,38 +19,41 @@ const Kueche = ({
   next = wohnzimmer,
 }) => (
   <Layout>
+    <Helmet>
+      <title>{current.title}</title>
+    </Helmet>
+
     <Article>
-      <TextSection>
-        <h1>Die Küche</h1>
-        <p>
+      <Text>
+        <H1>Die Küche</H1>
+        <P>
           Die geräumige Landhausküche ist mit einer gemütlichen Sitzecke mit
           Jogltisch ausgestattet. Eine Speis und ein kleiner Vorbereitungsraum
           grenzen direkt an.
-        </p>
-        <p>
+        </P>
+        <P>
           Von der Küche gibt es einen Ausgang in den Garten mit zahlreichen
           Gemüse- und Kräuterbeeten.
-        </p>
-      </TextSection>
+        </P>
+      </Text>
 
       <ImageSection>
-        <Link to={next.path}>
-          <FluidImage
-            title={current.title}
-            alt={current.name}
-            file={data.image}
-          />
-        </Link>
+        <AnimatedImage
+          to={next.path}
+          title={current.title}
+          alt={current.name}
+          file={data.image}
+        />
       </ImageSection>
     </Article>
 
     <NavBar>
       <NavItem to={previous.path} title={previous.name}>
-        <Icon icon="left" />
+        <FadingIcon icon="left" />
       </NavItem>
-      <NavItem to={next.path} title={next.title}>
-        {next.name} <Icon icon="right" />
-      </NavItem>
+      <AnimatedNavItem to={next.path} iconRight="right" title={next.title}>
+        {next.name}{' '}
+      </AnimatedNavItem>
     </NavBar>
   </Layout>
 );
