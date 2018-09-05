@@ -23,7 +23,7 @@ export const goldenRatio = css`
 
 const Main = styled('main')`
   ${goldenRatio};
-  min-height: 15em; // Define a minimum height so the text is not cut off too much.
+  min-height: 12em; // Define a minimum height so the text is not cut off too much.
   display: flex;
   flex-direction: column;
 `;
