@@ -77,8 +77,7 @@ export const MainNav = styled(AnimatedNav)`
   display: flex;
   align-items: stretch;
   justify-content: stretch;
-  background-color: #fff;
-  border-bottom: 3.45rem solid rgba(85, 107, 49, 0.8);
+  border-bottom: 3.45rem solid #7c8c63;
 
   @media (min-height: 480px) and (orientation: landscape) {
     border-bottom-width: 5.45rem;
