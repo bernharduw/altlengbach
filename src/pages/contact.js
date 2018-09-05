@@ -59,8 +59,8 @@ const Summary = ({ data, previous = index, current = contact }) => (
               Tel.: <a href="tel:+4369919713296">+43 6991 9713296</a>
               <br />
               Mail:{' '}
-              <a href="kontakt.altlengbach@datenbankdesign.com">
-                kontakt.altlengbach@datenbankdesign.com
+              <a href="landhaus@datenbankdesign.com">
+                landhaus@datenbankdesign.com
               </a>
               <br />
               Web: <a href="http://www.dns.co.at">www.dns.co.at</a>
