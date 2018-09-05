@@ -10,6 +10,11 @@ const ImageSection = styled('aside')`
     height: 100%;
   }
 
+  // Blur the inline placeholder a bit more than the default.
+  .gatsby-image-wrapper img:first-of-type {
+    filter: blur(4px);
+  }
+
   @media (orientation: landscape) {
     overflow: hidden;
     height: 100%;
