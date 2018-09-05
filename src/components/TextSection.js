@@ -49,12 +49,12 @@ const MainContent = styled('div')`
 
   ::before {
     top: 0;
-    background-image: linear-gradient(white, transparent);
+    background-image: linear-gradient(white, rgba(255, 255, 255, 0));
   }
 
   ::after {
     bottom: 0;
-    background-image: linear-gradient(transparent, white);
+    background-image: linear-gradient(rgba(255, 255, 255, 0), white);
   }
 `;
 
