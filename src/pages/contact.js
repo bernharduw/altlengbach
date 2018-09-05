@@ -40,8 +40,6 @@ const Summary = ({ data, previous = index, current = contact }) => (
               <br />
               Mail:{' '}
               <a href="wsteiner@immobilien86.at">wsteiner@immobilien86.at</a>
-              <br />
-              Web: <a href="http://www.immobilien86.at">www.immobilien86.at</a>
             </p>
           </Text>
           <Image>

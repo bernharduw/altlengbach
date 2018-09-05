@@ -12,6 +12,7 @@ export const Main = styled('main')`
   align-items: stretch;
   background-color: rgba(85, 107, 49, 0.8);
   color: #fff;
+  max-width: 100vw;
 
   a,
   h1,
@@ -43,6 +44,10 @@ export const Section = styled('section')`
 
 export const Text = styled('div')`
   flex: 1;
+
+  @media (min-width: 640px) {
+    padding-right: 1rem;
+  }
 `;
 
 export const Image = styled('aside')`
