@@ -27,22 +27,22 @@ const Summary = ({ data, previous = index, current = contact }) => (
         </p>
         <Section>
           <Text>
-            <article>
-              <section>
-                <h2>akad. IM Wolfgang Steiner</h2>
-                <p>
-                  Tel.: <a href="tel:+436506286281">+43 6506286281</a>
-                  <br />
-                  Mail:{' '}
-                  <a href="wsteiner@immobilien86.at">
-                    wsteiner@immobilien86.at
-                  </a>
-                  <br />
-                  Web:{' '}
-                  <a href="http://www.immobilien86.at">www.immobilien86.at</a>
-                </p>
-              </section>
-            </article>
+            <h2>
+              <a href="http://www.immobilien86.at/objektdetail/2575082">
+                Immobilien 86
+              </a>
+            </h2>
+
+            <p>
+              akad. IM Wolfgang Steiner
+              <br />
+              Tel.: <a href="tel:+436506286281">+43 650 6286281</a>
+              <br />
+              Mail:{' '}
+              <a href="wsteiner@immobilien86.at">wsteiner@immobilien86.at</a>
+              <br />
+              Web: <a href="http://www.immobilien86.at">www.immobilien86.at</a>
+            </p>
           </Text>
           <Image>
             <FluidImage
@@ -51,6 +51,23 @@ const Summary = ({ data, previous = index, current = contact }) => (
               file={data.image}
             />
           </Image>
+        </Section>
+
+        <Section>
+          <Text>
+            <h2>Gestaltung, Programmierung</h2>
+            <p>
+              Bernhard Gschwantner <br />
+              Tel.: <a href="tel:+4369919713296">+43 6991 9713296</a>
+              <br />
+              Mail:{' '}
+              <a href="kontakt.altlengbach@datenbankdesign.com">
+                kontakt.altlengbach@datenbankdesign.com
+              </a>
+              <br />
+              Web: <a href="http://www.dns.co.at">www.dns.co.at</a>
+            </p>
+          </Text>
         </Section>
       </Content>
       <SubNav>

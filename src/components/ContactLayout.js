@@ -2,7 +2,8 @@ import styled from 'react-emotion';
 import { Link } from 'gatsby';
 import posed from 'react-pose';
 
-import AnimatedPage from './AnimatedPage';
+import MainLayout from './MainLayout';
+import BaseNavItem from './NavItem';
 
 export const Main = styled('main')`
   flex: 1;
@@ -33,13 +34,14 @@ export const Content = styled('section')`
 export const Section = styled('section')`
   display: flex;
   flex-direction: column;
+  margin-bottom: 3rem;
 
   @media (min-width: 640px) {
     flex-direction: row;
   }
 `;
 
-export const Text = styled('main')`
+export const Text = styled('div')`
   flex: 1;
 `;
 
@@ -79,25 +81,20 @@ export const SubNav = styled('nav')`
   background-color: darkolivegreen;
 `;
 
-export const NavItem = styled(Link)`
+export const NavItem = styled(BaseNavItem)`
   display: flex;
   flex-direction: column;
-  text-transform: uppercase;
   justify-content: space-around;
-  padding: 1rem;
 
-  @media (min-height: 480px) and (orientation: landscape) {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+  :only-child {
+    text-align: center;
   }
 `;
 
 export const NavItemExternal = NavItem.withComponent('a');
 
-const Layout = styled(AnimatedPage)`
-  display: flex;
+const Layout = styled(MainLayout)`
   flex-direction: row;
-  height: 100vh;
 `;
 
 export default Layout;
