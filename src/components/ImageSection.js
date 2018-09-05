@@ -12,7 +12,8 @@ const ImageSection = styled('aside')`
 
   // Blur the inline placeholder a bit more than the default.
   .gatsby-image-wrapper img:first-of-type {
-    filter: blur(4px);
+    filter: blur(1vmax);
+    transform: scale(1.05);
   }
 
   @media (orientation: landscape) {
