@@ -23,6 +23,7 @@ const ImageSection = styled('aside')`
   // Fix the SVG background.
   .gatsby-image-wrapper img {
     background-color: #f0f1ed;
+    margin-bottom: 0;
   }
 `;
 
