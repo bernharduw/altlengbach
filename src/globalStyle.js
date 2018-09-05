@@ -5,8 +5,6 @@ import './defaultStyle';
 // Style overrides to defaultStyle
 
 injectGlobal`
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600|Playfair+Display:700');
-
 @media (max-width: 768px) {
   html {
     font-size: 100%;
