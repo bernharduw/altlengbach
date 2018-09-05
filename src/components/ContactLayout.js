@@ -1,5 +1,4 @@
 import styled from 'react-emotion';
-import { Link } from 'gatsby';
 import posed from 'react-pose';
 
 import MainLayout from './MainLayout';
@@ -16,23 +15,29 @@ export const Main = styled('main')`
 
   a,
   h1,
-  h2 {
+  h2,
+  h3 {
     color: rgba(255, 255, 255, 0.75);
+  }
+
+  h1 a,
+  h2 a,
+  h3 a {
+    text-decoration: none;
   }
 `;
 
 export const Content = styled('section')`
-  flex: 1;
-  overflow: scroll; // To enable scrolling in portrait mode.
   padding: 3em 1em 1em;
+  flex: 1;
+  overflow: scroll; // Show long content.
 
   @media (min-width: 960px) {
-    padding-left: 3em;
-    padding-right: 3em;
+    display: flex;
   }
 `;
 
-export const Section = styled('section')`
+export const Flex = styled('div')`
   display: flex;
   flex-direction: column;
   margin-bottom: 3rem;
@@ -42,18 +47,21 @@ export const Section = styled('section')`
   }
 `;
 
-export const Text = styled('div')`
-  flex: 1;
+export const Box = styled('div')`
+  flex: ${props => props.flex || '1'};
 
-  @media (min-width: 640px) {
-    padding-right: 1rem;
+  @media (min-width: 960px) {
+    padding: 0 1em;
+
+    & & {
+      padding-left: 0;
+    }
   }
 `;
 
 export const Image = styled('aside')`
-  flex: 1;
+  flex: ${props => props.flex || '1'};
   max-width: 384px;
-  background-color: rgba(85, 107, 49, 0.1);
 `;
 
 const AnimatedNav = posed.div({
