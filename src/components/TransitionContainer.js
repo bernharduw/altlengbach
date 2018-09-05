@@ -1,8 +1,11 @@
 import React from 'react';
 import posed, { PoseGroup } from 'react-pose';
 import DirectionManager from './DirectionManager';
+import styled from 'react-emotion';
 
-const RoutesContainer = posed.div();
+const RoutesContainer = styled(posed.div())`
+  height: 100%;
+`;
 
 const TransitionContainer = ({ location, children }) => {
   return (
