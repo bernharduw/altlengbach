@@ -19,15 +19,15 @@ const ImageSection = styled('aside')`
     overflow: hidden;
     height: 100%;
 
+    // Let the spacer occupy 100% height.
     .gatsby-image-wrapper div:first-child {
       height: 100%;
       padding-bottom: 0 !important;
     }
   }
 
-  // Fix the SVG background.
+  // Remove the margin set by the defaultStyle.
   .gatsby-image-wrapper img {
-    background-color: #f0f1ed;
     margin-bottom: 0;
   }
 `;
