@@ -30,7 +30,7 @@ export const Main = styled('main')`
 export const Content = styled('section')`
   padding: 3em 1em 1em;
   flex: 1;
-  overflow: scroll; // Show long content.
+  overflow-y: auto; // Show long content.
 
   @media (min-width: 960px) {
     display: flex;

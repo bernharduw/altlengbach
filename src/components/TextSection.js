@@ -17,7 +17,7 @@ export const goldenRatio = css`
     flex: 0 38.1966%;
     max-width: 38.1966%;
     max-height: 100%;
-    overflow: auto;
+    overflow-y: auto;
   }
 `;
 
@@ -63,7 +63,7 @@ const MainContentInner = styled('div')`
   padding-top: 2em;
   padding-bottom: 2em;
   max-height: 100%;
-  overflow: auto;
+  overflow-y: auto;
 `;
 
 const HomeNav = styled(Link)`
