@@ -7702,14 +7702,14 @@ pngquant-bin@^5.0.0:
     execa "^0.10.0"
     logalot "^2.0.0"
 
-popmotion-pose@^3.2.6:
-  version "3.2.7"
-  resolved "https://registry.yarnpkg.com/popmotion-pose/-/popmotion-pose-3.2.7.tgz#8cf739fb25d1149faf2ba56dce83f2216d499c0f"
+popmotion-pose@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/popmotion-pose/-/popmotion-pose-3.3.0.tgz#6df7843cbb5fee81f8d8977b0233b051247c2f4d"
   dependencies:
     "@popmotion/easing" "^1.0.1"
     hey-listen "^1.0.5"
     popmotion "^8.3.7"
-    pose-core "^1.0.0"
+    pose-core "^2.0.0"
     style-value-types "^3.0.6"
     tslib "^1.9.1"
 
@@ -7732,9 +7732,9 @@ portfinder@^1.0.9:
     debug "^2.2.0"
     mkdirp "0.5.x"
 
-pose-core@^1.0.0:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/pose-core/-/pose-core-1.0.4.tgz#424039c31940109e933f49d74cf4404bad6465ad"
+pose-core@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/pose-core/-/pose-core-2.0.0.tgz#1a1497a18a25ed2556d92dd728e909e96df6d67e"
   dependencies:
     "@types/invariant" "^2.2.29"
     "@types/node" "^10.0.5"
@@ -8370,17 +8370,22 @@ react-hot-loader@^4.1.0:
     react-lifecycles-compat "^3.0.4"
     shallowequal "^1.0.2"
 
+react-is@^16.5.1:
+  version "16.5.1"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.5.1.tgz#c6e8734fd548a22e1cef4fd0833afbeb433b85ee"
+
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
-react-pose@^3.2.1:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/react-pose/-/react-pose-3.2.2.tgz#baae0edb69a0464892fe3aa39820e4264c17559d"
+react-pose@^3.3.3:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/react-pose/-/react-pose-3.3.3.tgz#9702414a139430db40ea1925f45f9eefc630652e"
   dependencies:
     "@emotion/is-prop-valid" "^0.6.5"
     hey-listen "^1.0.5"
-    popmotion-pose "^3.2.6"
+    popmotion-pose "^3.3.0"
+    react-is "^16.5.1"
     tslib "^1.9.1"
 
 react-side-effect@^1.1.0:
