@@ -17,7 +17,9 @@ const TransitionContainer = ({ location, children }) => {
           enterPose={getPoseName('enter')}
           exitPose={getPoseName('exit')}
         >
-          <RoutesContainer key={location.key}>{children}</RoutesContainer>
+          <RoutesContainer key={location.key || location.pathname}>
+            {children}
+          </RoutesContainer>
         </PoseGroup>
       )}
     </DirectionManager>
